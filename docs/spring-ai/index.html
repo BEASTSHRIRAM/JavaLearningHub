@@ -1,10 +1,10 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spring AI & Agentic Systems - Java Learning Hub</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=1781361599">
     <link rel="stylesheet" href="../java-basics/module.css">
 </head>
 <body>
@@ -50,8 +50,12 @@
     <div class="container module-content">
         <aside class="sidebar">
             <div class="toc">
+                <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="tocList">
+                    <span>Table of Contents</span>
+                    <span class="toc-toggle-icon">&#9660;</span>
+                </button>
                 <h3>Table of Contents</h3>
-                <ul>
+                <ul id="tocList">
                     <li><a href="#intro">Introduction</a></li>
                     <li><a href="#spring-ai-intro">Spring AI Intro</a></li>
                     <li><a href="#langchain4j">LangChain4j</a></li>
@@ -665,7 +669,7 @@ public class AgentScopeClient {
                     <pre><code>public class SmartAssistant {
     @Tool("Get current weather")
     public String getWeather(String city) {
-        return "Weather in " + city + ": Sunny, 72Â°F";
+        return "Weather in " + city + ": Sunny, 72&deg;F";
     }
 
     @Tool("Calculate distance")
@@ -787,6 +791,18 @@ public class AgentScopeClient {
     </footer>
 
     <script>
+        // TOC toggle (mobile)
+        const tocToggle = document.getElementById('tocToggle');
+        const tocEl = tocToggle ? tocToggle.closest('.toc') : null;
+        if (tocToggle && tocEl) {
+            tocToggle.addEventListener('click', function() {
+                tocEl.classList.toggle('open');
+                tocToggle.setAttribute('aria-expanded', tocEl.classList.contains('open'));
+                const icon = tocToggle.querySelector('.toc-toggle-icon');
+                if (icon) icon.textContent = tocEl.classList.contains('open') ? '\u25B2' : '\u25BC';
+            });
+        }
+
         // Hamburger toggle logic
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');

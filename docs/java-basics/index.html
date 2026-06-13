@@ -1,10 +1,10 @@
-﻿﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Basics - Java Learning Hub</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=1781361599">
     <link rel="stylesheet" href="module.css">
 </head>
 <body>
@@ -50,8 +50,12 @@
     <div class="container module-content">
         <aside class="sidebar">
             <div class="toc">
+                <button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="tocList">
+                    <span>Table of Contents</span>
+                    <span class="toc-toggle-icon">&#9660;</span>
+                </button>
                 <h3>Table of Contents</h3>
-                <ul>
+                <ul id="tocList">
                     <li><a href="#intro">Introduction</a></li>
                     <li><a href="#setup">Setup & Environment</a></li>
                     <li><a href="#variables">Variables & Data Types</a></li>
@@ -166,13 +170,13 @@ java HelloWorld</code></pre>
                         <tr>
                             <td><code>float</code></td>
                             <td>4 bytes</td>
-                            <td>&#10003; Ã— 10^38</td>
+                            <td>&#10003;  10^38</td>
                             <td><code>float f = 3.14f;</code></td>
                         </tr>
                         <tr>
                             <td><code>double</code></td>
                             <td>8 bytes</td>
-                            <td>&#10003; Ã— 10^308</td>
+                            <td>&#10003;  10^308</td>
                             <td><code>double d = 3.14;</code></td>
                         </tr>
                         <tr>
@@ -532,7 +536,7 @@ String[] words = "Hello World Java".split(" ");
                 <div class="practice-card">
                     <h4>Problem 2: Factorial Calculation</h4>
                     <p>Write a method that calculates the factorial of a number using a loop.</p>
-                    <p><strong>Example:</strong> factorial(5) = 5 Ã— 4 Ã— 3 Ã— 2 Ã— 1 = 120</p>
+                    <p><strong>Example:</strong> factorial(5) = 5  4  3  2  1 = 120</p>
                 </div>
 
                 <div class="practice-card">
@@ -599,6 +603,18 @@ String[] words = "Hello World Java".split(" ");
     </footer>
 
     <script>
+        // TOC toggle (mobile)
+        const tocToggle = document.getElementById('tocToggle');
+        const tocEl = tocToggle ? tocToggle.closest('.toc') : null;
+        if (tocToggle && tocEl) {
+            tocToggle.addEventListener('click', function() {
+                tocEl.classList.toggle('open');
+                tocToggle.setAttribute('aria-expanded', tocEl.classList.contains('open'));
+                const icon = tocToggle.querySelector('.toc-toggle-icon');
+                if (icon) icon.textContent = tocEl.classList.contains('open') ? '\u25B2' : '\u25BC';
+            });
+        }
+
         // Hamburger toggle logic
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.querySelector('.nav-links');
