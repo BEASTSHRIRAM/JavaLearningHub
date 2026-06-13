@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object-Oriented Programming - Java Learning Hub</title>
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../java-basics/module.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">☕ Java Learning Hub</div>
+            <div class="logo">Java Learning Hub</div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../java-basics/index.html">Java Basics</a></li>
@@ -18,6 +17,14 @@
                 <li><a href="../dsa/index.html">DSA</a></li>
                 <li><a href="../java-backend/index.html">Backend</a></li>
                 <li><a href="../spring-ai/index.html">Spring AI</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg viewBox="0 0 24 24" id="themeIcon">
+                            <!-- Default to moon icon for light mode -->
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -30,11 +37,11 @@
 
     <section class="module-hero">
         <div class="container">
-            <h1>🎯 Object-Oriented Programming (OOP)</h1>
+            <h1>Object-Oriented Programming (OOP)</h1>
             <p>Master the core principles of OOP: Encapsulation, Inheritance, Polymorphism, and Abstraction</p>
             <div class="meta">
-                <span class="difficulty-badge medium">Intermediate</span>
-                <span class="time-badge">⏱️ 3-4 weeks</span>
+                <span class="difficulty-badge">Intermediate</span>
+                <span class="time-badge">3-4 weeks</span>
             </div>
         </div>
     </section>
@@ -42,386 +49,148 @@
     <div class="container module-content">
         <aside class="sidebar">
             <div class="toc">
-                <h3>📚 Table of Contents</h3>
+                <h3>Table of Contents</h3>
                 <ul>
-                    <li><a href="#basics">OOP Basics</a></li>
-                    <li><a href="#encapsulation">Encapsulation</a></li>
-                    <li><a href="#inheritance">Inheritance</a></li>
+                    <li><a href="#classes">Classes and Objects</a></li>
+                    <li><a href="#constructors">Constructors, this, finalize</a></li>
+                    <li><a href="#encapsulation">Access Control</a></li>
+                    <li><a href="#inheritance">Inheritance, super, final</a></li>
                     <li><a href="#polymorphism">Polymorphism</a></li>
-                    <li><a href="#abstraction">Abstraction</a></li>
-                    <li><a href="#interfaces">Interfaces</a></li>
-                    <li><a href="#best-practices">Best Practices</a></li>
-                    <li><a href="#projects">Practice Projects</a></li>
+                    <li><a href="#abstraction">Abstraction & Interfaces</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#static">Static Keyword</a></li>
+                    <li><a href="#enums">Enumerations</a></li>
                 </ul>
-            </div>
-            <div class="sidebar-box">
-                <h4>💡 Tips</h4>
-                <p>Review the code examples from Lect2-Lect5 in your workspace while reading this module!</p>
             </div>
         </aside>
 
         <main class="main-content">
 
-            <section id="basics" class="lesson">
-                <h2>🎯 OOP Fundamentals</h2>
-                <p>Object-Oriented Programming is a programming paradigm based on objects and classes.</p>
-
-                <h3>Key Concepts</h3>
-                <div class="key-points">
-                    <strong>The Four Pillars of OOP:</strong>
-                    <ul>
-                        <li>✓ <strong>Encapsulation:</strong> Hide internal details, expose only what's necessary</li>
-                        <li>✓ <strong>Inheritance:</strong> Create hierarchies of classes, reuse code</li>
-                        <li>✓ <strong>Polymorphism:</strong> Same interface, different implementations</li>
-                        <li>✓ <strong>Abstraction:</strong> Define what objects do, not how they do it</li>
-                    </ul>
-                </div>
-
-                <h3>Class vs Object</h3>
+            <section id="classes" class="lesson">
+                <h2>Classes and Objects</h2>
+                <p>A class is a template for an object, and an object is an instance of a class. A class creates a new data type that can be used to create objects.</p>
+                <p>When you declare an object of a class, you are creating an instance of that class. Thus, a class is a logical construct. An object has physical reality. (That is, an object occupies space in memory.)</p>
+                <p>Objects are characterized by three essential properties: state, identity, and behavior. The state of an object is a value from its data type. The identity of an object distinguishes one object from another. The behavior of an object is the effect of data-type operations.</p>
+                
+                <h3>Memory Allocation</h3>
+                <p>The <code>new</code> keyword dynamically allocates memory for an object and returns a reference to it. In Java, all class objects must be dynamically allocated.</p>
                 <div class="code-block">
-                    <pre><code>// Class: Blueprint/Template
-public class Car {
-    // Attributes
-    String color;
-    String model;
+                    <pre><code>Box mybox; // declare reference to object
+mybox = new Box(); // allocate a Box object</code></pre>
+                </div>
+                <p>When you assign one object reference variable to another object reference variable, you are not creating a copy of the object, you are only making a copy of the reference. Both will refer to the same object.</p>
+            </section>
 
-    // Method
-    void drive() {
-        System.out.println("Car is driving");
-    }
-}
-
-// Object: Instance of a class
-Car myCar = new Car();  // Create object
-myCar.color = "Red";    // Set attributes
-myCar.drive();          // Call method
-</code></pre>
+            <section id="constructors" class="lesson">
+                <h2>Constructors, this, finalize</h2>
+                <p>Once defined, the constructor is automatically called when the object is created, before the <code>new</code> operator completes. Constructors have no return type, not even void. The implicit return type is the class type itself.</p>
+                <p>Any class will have a default constructor, does not matter if we declare it in the class or not. If we inherit a class, then the derived class must call its super class constructor explicitly or implicitly.</p>
+                
+                <h3>The this Keyword</h3>
+                <p>Sometimes a method will need to refer to the object that invoked it. <code>this</code> can be used inside any method to refer to the current object. It is always a reference to the object on which the method was invoked.</p>
+                
+                <h3>The finalize() Method</h3>
+                <p>Java provides a mechanism called finalization. By using finalization, you can define specific actions that will occur when an object is just about to be reclaimed by the garbage collector.</p>
+                <div class="code-block">
+                    <pre><code>protected void finalize( ) {
+    // finalization code here
+}</code></pre>
                 </div>
             </section>
 
             <section id="encapsulation" class="lesson">
-                <h2>🔒 Encapsulation</h2>
-                <p>Hide internal details of a class and expose only necessary functionality through public methods.</p>
-
-                <h3>Access Modifiers</h3>
+                <h2>Access Control</h2>
+                <p>How a member can be accessed is determined by the access modifier attached to its declaration. Usually, you will want to restrict access to the data members of a class, allowing access only through methods.</p>
+                
+                <h3>Modifiers Matrix</h3>
                 <table class="data-types-table">
                     <thead>
                         <tr>
                             <th>Modifier</th>
                             <th>Class</th>
                             <th>Package</th>
-                            <th>Subclass</th>
-                            <th>Outside</th>
+                            <th>Subclass (Same Pkg)</th>
+                            <th>Subclass (Diff Pkg)</th>
+                            <th>World (Diff Pkg & Not Subclass)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>public</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
                         </tr>
                         <tr>
                             <td><strong>protected</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>❌</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>No</td>
                         </tr>
                         <tr>
-                            <td><strong>default</strong></td>
-                            <td>✅</td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>❌</td>
+                            <td><strong>no modifier (default)</strong></td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
                         </tr>
                         <tr>
                             <td><strong>private</strong></td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>❌</td>
-                            <td>❌</td>
+                            <td>Yes</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
+                            <td>No</td>
                         </tr>
                     </tbody>
                 </table>
-
-                <h3>Getters & Setters</h3>
-                <div class="code-block">
-                    <pre><code>public class Student {
-    private String name;
-    private int age;
-    private double gpa;
-
-    // Getter
-    public String getName() {
-        return name;
-    }
-
-    // Setter with validation
-    public void setName(String name) {
-        if (name != null && !name.isEmpty()) {
-            this.name = name;
-        }
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        if (age > 0 && age < 120) {
-            this.age = age;
-        }
-    }
-}
-</code></pre>
-                </div>
             </section>
 
             <section id="inheritance" class="lesson">
-                <h2>🔗 Inheritance</h2>
-                <p>Inherit properties and methods from a parent class to avoid code duplication.</p>
+                <h2>Inheritance, super, and final</h2>
+                <p>To inherit a class, incorporate the definition of one class into another using the <code>extends</code> keyword. Java does not support the inheritance of multiple superclasses into a single subclass.</p>
+                
+                <h3>Superclass References</h3>
+                <p>A superclass variable can reference a subclass object. However, you will have access only to those parts of the object defined by the superclass.</p>
 
-                <h3>Single Inheritance</h3>
+                <h3>Using super</h3>
+                <p>The keyword <code>super</code> has two forms. The first calls the superclass's constructor. The second is used to access a member of the superclass that has been hidden by a member of a subclass.</p>
                 <div class="code-block">
-                    <pre><code>// Parent class
-public class Vehicle {
-    protected String brand;
-
-    public void start() {
-        System.out.println("Vehicle starting");
-    }
-}
-
-// Child class inherits from parent
-public class Car extends Vehicle {
-    private int doors;
-
-    @Override
-    public void start() {
-        System.out.println("Car starting with engine");
-    }
-
-    public void openTrunk() {
-        System.out.println("Trunk opened");
-    }
-}
-
-// Usage
-Car myCar = new Car();
-myCar.brand = "Toyota";      // Inherited
-myCar.start();               // Overridden
-myCar.openTrunk();           // Own method
-</code></pre>
+                    <pre><code>BoxWeight(double w, double h, double d, double m) {
+    super(w, h, d); // call superclass constructor
+    weight = m;
+}</code></pre>
                 </div>
 
-                <h3>super() Keyword</h3>
-                <div class="code-block">
-                    <pre><code>public class Animal {
-    protected String name;
-
-    public Animal(String name) {
-        this.name = name;
-    }
-
-    public void sound() {
-        System.out.println("Animal sounds");
-    }
-}
-
-public class Dog extends Animal {
-    private String breed;
-
-    public Dog(String name, String breed) {
-        super(name);  // Call parent constructor
-        this.breed = breed;
-    }
-
-    @Override
-    public void sound() {
-        super.sound();  // Call parent method
-        System.out.println("Dog barks");
-    }
-}
-</code></pre>
-                </div>
+                <h3>The final Keyword</h3>
+                <p>The keyword <code>final</code> has three uses: to create named constants, to prevent a method from being overridden, and to prevent a class from being inherited.</p>
             </section>
 
             <section id="polymorphism" class="lesson">
-                <h2>🎭 Polymorphism</h2>
-                <p>One interface, multiple implementations. Same method name, different behaviors.</p>
+                <h2>Polymorphism (Overriding & Overloading)</h2>
+                
+                <h3>Method Overloading (Compile-Time)</h3>
+                <p>Defining two or more methods within the same class that share the same name, as long as their parameter declarations are different. Return type alone is insufficient to distinguish them.</p>
 
-                <h3>Method Overriding (Runtime Polymorphism)</h3>
-                <div class="code-block">
-                    <pre><code>public abstract class Shape {
-    public abstract void draw();
-    public abstract double area();
-}
-
-public class Circle extends Shape {
-    private double radius;
-
-    @Override
-    public void draw() {
-        System.out.println("Drawing Circle");
-    }
-
-    @Override
-    public double area() {
-        return Math.PI * radius * radius;
-    }
-}
-
-public class Rectangle extends Shape {
-    private double width, height;
-
-    @Override
-    public void draw() {
-        System.out.println("Drawing Rectangle");
-    }
-
-    @Override
-    public double area() {
-        return width * height;
-    }
-}
-
-// Usage
-Shape shape1 = new Circle();
-Shape shape2 = new Rectangle();
-shape1.draw();  // Calls Circle's draw()
-shape2.draw();  // Calls Rectangle's draw()
-</code></pre>
-                </div>
-
-                <h3>Method Overloading (Compile-time Polymorphism)</h3>
-                <div class="code-block">
-                    <pre><code>public class Calculator {
-    // Same method name, different parameters
-
-    public int add(int a, int b) {
-        return a + b;
-    }
-
-    public double add(double a, double b) {
-        return a + b;
-    }
-
-    public int add(int a, int b, int c) {
-        return a + b + c;
-    }
-}
-
-// Usage
-Calculator calc = new Calculator();
-System.out.println(calc.add(5, 10));           // 15
-System.out.println(calc.add(5.5, 10.5));       // 16.0
-System.out.println(calc.add(5, 10, 15));       // 30
-</code></pre>
-                </div>
+                <h3>Method Overriding (Run-Time)</h3>
+                <p>When a method in a subclass has the same name and type signature as a method in its superclass, it overrides the method. Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at run time, rather than compile time.</p>
             </section>
 
             <section id="abstraction" class="lesson">
-                <h2>🔓 Abstraction</h2>
-                <p>Define what a class should do, not how it does it. Use abstract classes and methods.</p>
+                <h2>Abstraction & Interfaces</h2>
+                
+                <h3>Abstract Classes</h3>
+                <p>You can require that certain methods be overridden by subclasses by specifying the <code>abstract</code> type modifier. An abstract class cannot be instantiated, and any subclass must either implement all abstract methods or be declared abstract itself. Abstract classes can have non-abstract methods, final variables, static variables, and constructors.</p>
 
-                <div class="code-block">
-                    <pre><code>// Abstract class
-public abstract class DatabaseConnection {
-    // Abstract methods - must be implemented
-    public abstract void connect();
-    public abstract void disconnect();
-    public abstract void executeQuery(String query);
+                <h3>Interfaces</h3>
+                <p>Interfaces specify only what the class is doing, not how it is doing it. Variables declared in an interface are implicitly <code>public static final</code>, and methods are <code>public abstract</code> by default (prior to Java 8).</p>
+                <p>From Java 8 onwards, interfaces can contain <code>default</code> and <code>static</code> methods with implementations. The calling code can dispatch through an interface without having to know anything about the callee.</p>
 
-    // Concrete method
-    public void logConnection() {
-        System.out.println("Connection logged");
-    }
-}
-
-public class MySQLConnection extends DatabaseConnection {
-    @Override
-    public void connect() {
-        System.out.println("Connected to MySQL");
-    }
-
-    @Override
-    public void disconnect() {
-        System.out.println("Disconnected from MySQL");
-    }
-
-    @Override
-    public void executeQuery(String query) {
-        System.out.println("Executing: " + query);
-    }
-}
-
-public class PostgreSQLConnection extends DatabaseConnection {
-    @Override
-    public void connect() {
-        System.out.println("Connected to PostgreSQL");
-    }
-
-    @Override
-    public void disconnect() {
-        System.out.println("Disconnected from PostgreSQL");
-    }
-
-    @Override
-    public void executeQuery(String query) {
-        System.out.println("Executing: " + query);
-    }
-}
-</code></pre>
-                </div>
-            </section>
-
-            <section id="interfaces" class="lesson">
-                <h2>🔌 Interfaces</h2>
-                <p>Fully abstract classes. Contracts that classes must implement.</p>
-
-                <div class="code-block">
-                    <pre><code>// Interface definition
-public interface PaymentMethod {
-    void pay(double amount);
-    void refund(double amount);
-}
-
-// Implementations
-public class CreditCard implements PaymentMethod {
-    @Override
-    public void pay(double amount) {
-        System.out.println("Paying " + amount + " via Credit Card");
-    }
-
-    @Override
-    public void refund(double amount) {
-        System.out.println("Refunding " + amount + " to Credit Card");
-    }
-}
-
-public class PayPal implements PaymentMethod {
-    @Override
-    public void pay(double amount) {
-        System.out.println("Paying " + amount + " via PayPal");
-    }
-
-    @Override
-    public void refund(double amount) {
-        System.out.println("Refunding " + amount + " to PayPal");
-    }
-}
-
-// Usage
-PaymentMethod method1 = new CreditCard();
-PaymentMethod method2 = new PayPal();
-method1.pay(100);      // Credit Card payment
-method2.pay(50);       // PayPal payment
-</code></pre>
-                </div>
-
-                <h3>Interface vs Abstract Class</h3>
                 <table class="data-types-table">
                     <thead>
                         <tr>
@@ -432,95 +201,59 @@ method2.pay(50);       // PayPal payment
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Variables</td>
-                            <td>Can have any type</td>
-                            <td>Only constants (public static final)</td>
-                        </tr>
-                        <tr>
-                            <td>Methods</td>
-                            <td>Abstract & concrete</td>
-                            <td>Only abstract (before Java 8)</td>
-                        </tr>
-                        <tr>
                             <td>Inheritance</td>
-                            <td>Single</td>
-                            <td>Multiple</td>
+                            <td>Can extend one class and implement many interfaces</td>
+                            <td>Can extend multiple interfaces</td>
                         </tr>
                         <tr>
-                            <td>Constructor</td>
-                            <td>Yes</td>
-                            <td>No</td>
+                            <td>Implementation</td>
+                            <td>Using "extends"</td>
+                            <td>Using "implements"</td>
                         </tr>
                         <tr>
-                            <td>Access</td>
-                            <td>Any modifier</td>
-                            <td>Public only (implicit)</td>
+                            <td>Variables</td>
+                            <td>Final, non-final, static, non-static</td>
+                            <td>Only static and final</td>
+                        </tr>
+                        <tr>
+                            <td>Constructors</td>
+                            <td>Allowed</td>
+                            <td>Not Allowed</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
 
-            <section id="best-practices" class="lesson">
-                <h2>⭐ OOP Best Practices</h2>
+            <section id="packages" class="lesson">
+                <h2>Packages</h2>
+                <p>Packages are containers for classes used to keep the class name space compartmentalized. They prevent collisions between classes with the same names. Packages are stored in a hierarchical manner corresponding to file system directories.</p>
+            </section>
 
-                <div class="practice-card">
-                    <h4>1. Single Responsibility Principle (SRP)</h4>
-                    <p>A class should have one and only one reason to change. Each class should do one thing well.</p>
-                </div>
-
-                <div class="practice-card">
-                    <h4>2. Keep Classes Cohesive</h4>
-                    <p>Methods and properties should be closely related. High cohesion = better design.</p>
-                </div>
-
-                <div class="practice-card">
-                    <h4>3. Use Composition Over Inheritance</h4>
-                    <p>Prefer <code>HAS-A</code> relationships over <code>IS-A</code> when possible for flexibility.</p>
-                </div>
-
-                <div class="practice-card">
-                    <h4>4. Encapsulate Variables</h4>
-                    <p>Make fields private, provide public getters/setters. This gives you control and flexibility.</p>
-                </div>
-
-                <div class="practice-card">
-                    <h4>5. Program to Interfaces</h4>
-                    <p>Depend on abstractions, not concrete classes. Use interfaces for flexibility.</p>
-                </div>
-
-                <div class="practice-card">
-                    <h4>6. Avoid Deep Inheritance Hierarchies</h4>
-                    <p>Keep inheritance chains shallow (2-3 levels max). Deep hierarchies are hard to maintain.</p>
+            <section id="static" class="lesson">
+                <h2>The static Keyword</h2>
+                <p>When a member is declared static, it can be accessed before any objects of its class are created, and without reference to any object. A static method belongs to the class, not the instance.</p>
+                <p>A static method can call only other static methods and access static data. It cannot refer to <code>this</code> or <code>super</code> keywords in any way. You cannot override static methods because they are resolved during compile time.</p>
+                <div class="code-block">
+                    <pre><code>class UseStatic {
+    static int a = 3;
+    static int b;
+    static {
+        System.out.println("Static block initialized.");
+        b = a * 4;
+    }
+}</code></pre>
                 </div>
             </section>
 
-            <section id="projects" class="lesson">
-                <h2>🎯 Practice Projects</h2>
-
-                <div class="practice-card">
-                    <h4>Project 1: Bank System</h4>
-                    <p>Create an abstract Account class with CheckingAccount, SavingsAccount, BusinessAccount subclasses. Implement deposit, withdraw, interest calculation.</p>
-                </div>
-
-                <div class="practice-card">
-                    <h4>Project 2: Library Management</h4>
-                    <p>Design classes for Book, Member, Library. Implement interfaces for Borrowable, Returnable. Use encapsulation and inheritance.</p>
-                </div>
-
-                <div class="practice-card">
-                    <h4>Project 3: Vehicle Rental System</h4>
-                    <p>Create Vehicle hierarchy (Car, Bike, Truck). Implement rental logic, pricing, reservation management.</p>
-                </div>
-
-                <div class="practice-card">
-                    <h4>Project 4: E-commerce Platform</h4>
-                    <p>Design Product, Order, Customer, Payment classes. Use interfaces for PaymentMethod, Discount strategies.</p>
-                </div>
+            <section id="enums" class="lesson">
+                <h2>Enumerations</h2>
+                <p>An enumeration defines a class type created using the <code>enum</code> keyword. All enums implicitly extend the <code>java.lang.Enum</code> class and cannot extend anything else.</p>
+                <p>Methods like <code>values()</code>, <code>ordinal()</code>, and <code>valueOf()</code> are present inside java.lang.Enum. Enums can contain constructors (executed for each enum constant during class loading), but they must be private or default modifiers.</p>
             </section>
 
             <div class="next-steps">
-                <h3>📚 Next Steps</h3>
-                <p>Master OOP concepts, then move to:</p>
+                <h3>Next Steps</h3>
+                <p>Master OOP concepts, then move to Data Structures and Algorithms.</p>
                 <a href="../dsa/index.html" class="btn btn-primary">Learn Data Structures & Algorithms</a>
             </div>
 
@@ -547,20 +280,42 @@ method2.pay(50);       // PayPal payment
                         <li><a href="../index.html">Home</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
-                    <h5>Official Links</h5>
-                    <ul>
-                        <li><a href="https://docs.oracle.com/javase/" target="_blank">Java Docs</a></li>
-                        <li><a href="https://github.com/BEASTSHRIRAM/DSA-Java" target="_blank">DSA Reference</a></li>
-                    </ul>
-                </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Java Learning Hub. Built with ☕ & ❤️</p>
+                <p>&copy; 2026 Java Learning Hub</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        // Check for saved user preference, if any, on load of the website
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            updateIcon(currentTheme);
+        }
+
+        themeToggle.addEventListener('click', function() {
+            let theme = document.documentElement.getAttribute('data-theme');
+            let targetTheme = theme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', targetTheme);
+            localStorage.setItem('theme', targetTheme);
+            updateIcon(targetTheme);
+        });
+
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            } else {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            }
+        }
+    </script>
 </body>
 </html>
-
