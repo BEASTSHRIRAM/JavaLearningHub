@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Basics - Java Learning Hub</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="module.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">☕ Java Learning Hub</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html" class="active">Java Basics</a></li>
+                <li><a href="../oops/index.html">OOP</a></li>
+                <li><a href="../dsa/index.html">DSA</a></li>
+                <li><a href="../java-backend/index.html">Backend</a></li>
+                <li><a href="../spring-ai/index.html">Spring AI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="../index.html">Home</a> / <span>Java Basics</span>
+        </div>
+    </div>
+
+    <section class="module-hero">
+        <div class="container">
+            <h1>📖 Java Basics</h1>
+            <p>Master the fundamentals of Java programming. Perfect for beginners!</p>
+            <div class="meta">
+                <span class="difficulty-badge easy">Beginner</span>
+                <span class="time-badge">⏱️ 2-3 weeks</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container module-content">
+        <aside class="sidebar">
+            <div class="toc">
+                <h3>📚 Table of Contents</h3>
+                <ul>
+                    <li><a href="#intro">Introduction</a></li>
+                    <li><a href="#setup">Setup & Environment</a></li>
+                    <li><a href="#variables">Variables & Data Types</a></li>
+                    <li><a href="#operators">Operators</a></li>
+                    <li><a href="#control-flow">Control Flow</a></li>
+                    <li><a href="#methods">Methods & Functions</a></li>
+                    <li><a href="#arrays">Arrays & Collections</a></li>
+                    <li><a href="#strings">Strings</a></li>
+                    <li><a href="#exceptions">Exception Handling</a></li>
+                    <li><a href="#practice">Practice Problems</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-box">
+                <h4>💡 Tips</h4>
+                <p>Take your time with fundamentals. They form the foundation for everything else!</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+
+            <section id="intro" class="lesson">
+                <h2>🎯 Introduction to Java</h2>
+                <p>Java is a versatile, object-oriented programming language that runs on the Java Virtual Machine (JVM). It's used for everything from web applications to Android apps and enterprise systems.</p>
+
+                <div class="key-points">
+                    <strong>Key Characteristics:</strong>
+                    <ul>
+                        <li>✓ <strong>Platform Independent:</strong> Write once, run anywhere (WORA)</li>
+                        <li>✓ <strong>Object-Oriented:</strong> Everything is an object</li>
+                        <li>✓ <strong>Statically Typed:</strong> Type checking at compile time</li>
+                        <li>✓ <strong>Garbage Collection:</strong> Automatic memory management</li>
+                        <li>✓ <strong>Rich Ecosystem:</strong> Massive libraries and frameworks</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="setup" class="lesson">
+                <h2>⚙️ Setup & Environment</h2>
+
+                <h3>Install Java Development Kit (JDK)</h3>
+                <p>Download and install from: <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">Oracle JDK</a></p>
+
+                <div class="code-block">
+                    <pre><code>// Verify installation (Windows PowerShell)
+java -version
+javac -version</code></pre>
+                </div>
+
+                <h3>Install IDE</h3>
+                <p>Choose one:</p>
+                <ul>
+                    <li><strong>IntelliJ IDEA:</strong> Best overall (Community Edition is free)</li>
+                    <li><strong>Eclipse:</strong> Lightweight, good for beginners</li>
+                    <li><strong>VS Code:</strong> Minimal, customizable</li>
+                </ul>
+
+                <h3>Create Your First Java Project</h3>
+                <div class="code-block">
+                    <pre><code>// File: HelloWorld.java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</code></pre>
+                </div>
+
+                <p><strong>Compile & Run:</strong></p>
+                <div class="code-block">
+                    <pre><code>javac HelloWorld.java
+java HelloWorld</code></pre>
+                </div>
+            </section>
+
+            <section id="variables" class="lesson">
+                <h2>📝 Variables & Data Types</h2>
+
+                <h3>Primitive Data Types</h3>
+                <table class="data-types-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Size</th>
+                            <th>Range</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>byte</code></td>
+                            <td>1 byte</td>
+                            <td>-128 to 127</td>
+                            <td><code>byte b = 10;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>short</code></td>
+                            <td>2 bytes</td>
+                            <td>-32,768 to 32,767</td>
+                            <td><code>short s = 1000;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>int</code></td>
+                            <td>4 bytes</td>
+                            <td>-2^31 to 2^31-1</td>
+                            <td><code>int i = 50000;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>long</code></td>
+                            <td>8 bytes</td>
+                            <td>-2^63 to 2^63-1</td>
+                            <td><code>long l = 999999999L;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>float</code></td>
+                            <td>4 bytes</td>
+                            <td>±3.4 × 10^38</td>
+                            <td><code>float f = 3.14f;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>double</code></td>
+                            <td>8 bytes</td>
+                            <td>±1.7 × 10^308</td>
+                            <td><code>double d = 3.14;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>boolean</code></td>
+                            <td>1 bit</td>
+                            <td>true or false</td>
+                            <td><code>boolean flag = true;</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>char</code></td>
+                            <td>2 bytes</td>
+                            <td>Unicode 0-65535</td>
+                            <td><code>char c = 'A';</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Variable Declaration</h3>
+                <div class="code-block">
+                    <pre><code>// Syntax: dataType variableName = value;
+
+int age = 25;
+double salary = 50000.50;
+String name = "John Doe";
+boolean isStudent = true;
+char grade = 'A';</code></pre>
+                </div>
+
+                <h3>Reference Data Types (Objects)</h3>
+                <div class="code-block">
+                    <pre><code>String message = "Hello Java";
+int[] numbers = {1, 2, 3, 4, 5};
+ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();</code></pre>
+                </div>
+            </section>
+
+            <section id="operators" class="lesson">
+                <h2>🔧 Operators</h2>
+
+                <h3>Arithmetic Operators</h3>
+                <div class="code-block">
+                    <pre><code>int a = 10, b = 3;
+System.out.println(a + b);     // 13 (Addition)
+System.out.println(a - b);     // 7  (Subtraction)
+System.out.println(a * b);     // 30 (Multiplication)
+System.out.println(a / b);     // 3  (Division)
+System.out.println(a % b);     // 1  (Modulus)
+System.out.println(a++);       // 10 (Post-increment)
+System.out.println(++a);       // 12 (Pre-increment)</code></pre>
+                </div>
+
+                <h3>Comparison Operators</h3>
+                <div class="code-block">
+                    <pre><code>int x = 5, y = 10;
+System.out.println(x == y);    // false
+System.out.println(x != y);    // true
+System.out.println(x < y);     // true
+System.out.println(x > y);     // false
+System.out.println(x <= y);    // true
+System.out.println(x >= y);    // false</code></pre>
+                </div>
+
+                <h3>Logical Operators</h3>
+                <div class="code-block">
+                    <pre><code>boolean p = true, q = false;
+System.out.println(p && q);    // false (AND)
+System.out.println(p || q);    // true  (OR)
+System.out.println(!p);        // false (NOT)</code></pre>
+                </div>
+
+                <h3>Assignment Operators</h3>
+                <div class="code-block">
+                    <pre><code>int num = 10;
+num += 5;   // num = 15
+num -= 3;   // num = 12
+num *= 2;   // num = 24
+num /= 4;   // num = 6
+num %= 5;   // num = 1</code></pre>
+                </div>
+            </section>
+
+            <section id="control-flow" class="lesson">
+                <h2>🔀 Control Flow</h2>
+
+                <h3>if-else Statement</h3>
+                <div class="code-block">
+                    <pre><code>int age = 20;
+
+if (age < 18) {
+    System.out.println("Minor");
+} else if (age < 65) {
+    System.out.println("Adult");
+} else {
+    System.out.println("Senior");
+}</code></pre>
+                </div>
+
+                <h3>Switch Statement</h3>
+                <div class="code-block">
+                    <pre><code>int day = 3;
+String dayName;
+
+switch(day) {
+    case 1:
+        dayName = "Monday";
+        break;
+    case 2:
+        dayName = "Tuesday";
+        break;
+    case 3:
+        dayName = "Wednesday";
+        break;
+    default:
+        dayName = "Invalid";
+}</code></pre>
+                </div>
+
+                <h3>for Loop</h3>
+                <div class="code-block">
+                    <pre><code>// Traditional for loop
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+// Enhanced for loop (for-each)
+int[] arr = {1, 2, 3, 4, 5};
+for (int num : arr) {
+    System.out.println(num);
+}</code></pre>
+                </div>
+
+                <h3>while & do-while Loop</h3>
+                <div class="code-block">
+                    <pre><code>// while loop
+int count = 0;
+while (count < 5) {
+    System.out.println(count);
+    count++;
+}
+
+// do-while loop (executes at least once)
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i < 5);</code></pre>
+                </div>
+            </section>
+
+            <section id="methods" class="lesson">
+                <h2>🛠️ Methods & Functions</h2>
+
+                <h3>Method Syntax</h3>
+                <div class="code-block">
+                    <pre><code>// Syntax: accessModifier returnType methodName(parameters) {
+//     method body
+// }
+
+public class Calculator {
+    // Method with parameters and return type
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method with no parameters
+    public void greet() {
+        System.out.println("Hello!");
+    }
+
+    // Method with no return type
+    public void printMessage(String msg) {
+        System.out.println(msg);
+    }
+
+    // Overloading - same method name, different parameters
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+}</code></pre>
+                </div>
+
+                <h3>Method Calling</h3>
+                <div class="code-block">
+                    <pre><code>Calculator calc = new Calculator();
+int result = calc.add(5, 10);           // 15
+int result2 = calc.add(5, 10, 15);      // 30
+double result3 = calc.add(3.5, 2.5);    // 6.0
+calc.greet();                            // Hello!</code></pre>
+                </div>
+            </section>
+
+            <section id="arrays" class="lesson">
+                <h2>📦 Arrays & Collections</h2>
+
+                <h3>Arrays</h3>
+                <div class="code-block">
+                    <pre><code>// Single-dimensional array
+int[] numbers = new int[5];
+int[] primes = {2, 3, 5, 7, 11};
+
+// Access elements
+System.out.println(primes[0]);  // 2
+primes[0] = 1;                  // Modify element
+
+// Multi-dimensional array
+int[][] matrix = new int[3][3];
+int[][] grid = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+// Array iteration
+for (int num : primes) {
+    System.out.println(num);
+}</code></pre>
+                </div>
+
+                <h3>ArrayList (Collection)</h3>
+                <div class="code-block">
+                    <pre><code>import java.util.ArrayList;
+
+ArrayList&lt;String&gt; fruits = new ArrayList&lt;&gt;();
+fruits.add("Apple");
+fruits.add("Banana");
+fruits.add("Orange");
+
+System.out.println(fruits.get(0));      // Apple
+System.out.println(fruits.size());      // 3
+
+fruits.remove(1);                        // Remove Banana
+fruits.set(0, "Mango");                  // Replace Apple
+
+for (String fruit : fruits) {
+    System.out.println(fruit);
+}</code></pre>
+                </div>
+
+                <h3>HashMap (Key-Value Pairs)</h3>
+                <div class="code-block">
+                    <pre><code>import java.util.HashMap;
+
+HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();
+map.put("Alice", 25);
+map.put("Bob", 30);
+map.put("Charlie", 22);
+
+System.out.println(map.get("Alice"));    // 25
+System.out.println(map.containsKey("Bob")); // true
+map.remove("Charlie");
+
+for (String key : map.keySet()) {
+    System.out.println(key + " -> " + map.get(key));
+}</code></pre>
+                </div>
+            </section>
+
+            <section id="strings" class="lesson">
+                <h2>📄 Strings</h2>
+
+                <h3>String Basics</h3>
+                <div class="code-block">
+                    <pre><code>String str1 = "Hello";
+String str2 = new String("World");
+
+// Concatenation
+String greeting = str1 + " " + str2;    // "Hello World"
+String greeting2 = str1.concat(" ").concat(str2);
+
+// String length
+System.out.println(greeting.length());  // 11
+
+// Character access
+System.out.println(greeting.charAt(0)); // 'H'
+
+// Substring
+System.out.println(greeting.substring(0, 5));  // "Hello"</code></pre>
+                </div>
+
+                <h3>String Methods</h3>
+                <div class="code-block">
+                    <pre><code>String text = "  Hello World  ";
+
+// Case conversion
+System.out.println(text.toUpperCase());  // "  HELLO WORLD  "
+System.out.println(text.toLowerCase());  // "  hello world  "
+
+// Trimming & replacing
+System.out.println(text.trim());             // "Hello World"
+System.out.println(text.replace("World", "Java")); // "  Hello Java  "
+
+// Checking
+System.out.println(text.contains("World")); // true
+System.out.println(text.startsWith("  H")); // true
+System.out.println(text.endsWith("d  "));   // true
+
+// Splitting
+String[] words = "Hello World Java".split(" ");
+// words = ["Hello", "World", "Java"]</code></pre>
+                </div>
+            </section>
+
+            <section id="exceptions" class="lesson">
+                <h2>⚠️ Exception Handling</h2>
+
+                <div class="code-block">
+                    <pre><code>public class ExceptionExample {
+    public static void main(String[] args) {
+        try {
+            // Code that might throw exception
+            int result = 10 / 0;  // ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero!");
+            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("General exception occurred");
+        } finally {
+            System.out.println("This always executes");
+        }
+    }
+}</code></pre>
+                </div>
+
+                <h3>Common Exception Types</h3>
+                <ul>
+                    <li><code>ArithmeticException</code> - Math errors (divide by zero)</li>
+                    <li><code>NullPointerException</code> - Accessing null object</li>
+                    <li><code>ArrayIndexOutOfBoundsException</code> - Invalid array index</li>
+                    <li><code>StringIndexOutOfBoundsException</code> - Invalid string index</li>
+                    <li><code>NumberFormatException</code> - Invalid number conversion</li>
+                    <li><code>IOException</code> - Input/Output errors</li>
+                </ul>
+
+                <h3>Multiple Catch Blocks</h3>
+                <div class="code-block">
+                    <pre><code>try {
+    String num = "abc";
+    int value = Integer.parseInt(num);
+} catch (NumberFormatException e) {
+    System.out.println("Invalid number format");
+} catch (Exception e) {
+    System.out.println("General error occurred");
+}</code></pre>
+                </div>
+            </section>
+
+            <section id="practice" class="lesson">
+                <h2>🎯 Practice Problems</h2>
+
+                <div class="practice-card">
+                    <h4>Problem 1: Simple Calculator</h4>
+                    <p>Create a program that takes two numbers and an operator (+, -, *, /) and performs the operation.</p>
+                    <p><strong>Hint:</strong> Use Scanner class for user input and switch statement for operators.</p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>Problem 2: Factorial Calculation</h4>
+                    <p>Write a method that calculates the factorial of a number using a loop.</p>
+                    <p><strong>Example:</strong> factorial(5) = 5 × 4 × 3 × 2 × 1 = 120</p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>Problem 3: Reverse a String</h4>
+                    <p>Create a method that reverses a given string without using built-in reverse method.</p>
+                    <p><strong>Example:</strong> "Hello" → "olleH"</p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>Problem 4: Count Vowels</h4>
+                    <p>Write a program that counts the number of vowels in a given string.</p>
+                    <p><strong>Hint:</strong> Use a for-each loop or enhanced for loop.</p>
+                </div>
+
+                <div class="practice-card">
+                    <h4>Problem 5: Fibonacci Series</h4>
+                    <p>Generate the first n Fibonacci numbers and store them in an ArrayList.</p>
+                    <p><strong>Example:</strong> First 7: 0, 1, 1, 2, 3, 5, 8</p>
+                </div>
+            </section>
+
+            <div class="next-steps">
+                <h3>📚 Next Steps</h3>
+                <p>Once you've mastered Java Basics, move on to:</p>
+                <a href="../oops/index.html" class="btn btn-primary">Learn Object-Oriented Programming</a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../CONTRIBUTING.md">Contributing</a></li>
+                        <li><a href="../README.md">About</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Learning Modules</h5>
+                    <ul>
+                        <li><a href="index.html">Java Basics</a></li>
+                        <li><a href="../oops/index.html">OOP</a></li>
+                        <li><a href="../dsa/index.html">DSA</a></li>
+                        <li><a href="../java-backend/index.html">Backend</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Resources</h5>
+                    <ul>
+                        <li><a href="https://docs.oracle.com/javase/" target="_blank">Java Docs</a></li>
+                        <li><a href="https://github.com/BEASTSHRIRAM/DSA-Java" target="_blank">DSA Reference</a></li>
+                        <li><a href="https://spring.io/" target="_blank">Spring Boot</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Java Learning Hub. Built with ☕ & ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+
