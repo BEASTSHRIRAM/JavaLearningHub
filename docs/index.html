@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">Java Learning Hub</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="java-basics/index.html">Java Basics</a></li>
@@ -18,6 +19,13 @@
                 <li><a href="java-backend/index.html">Backend</a></li>
                 <li><a href="spring-ai/index.html">Spring AI</a></li>
                 <li><a href="https://github.com/yourusername/java-learning-hub" target="_blank">GitHub</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg viewBox="0 0 24 24" id="themeIcon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -61,14 +69,14 @@
                     <h3>Java Basics</h3>
                     <p>Start your Java journey with fundamentals</p>
                     <ul class="module-topics">
-                        <li>✓ Variables & Data Types</li>
-                        <li>✓ Operators & Control Flow</li>
-                        <li>✓ Methods & Functions</li>
-                        <li>✓ Arrays & Collections</li>
-                        <li>✓ Exception Handling</li>
+                        <li>âœ“ Variables & Data Types</li>
+                        <li>âœ“ Operators & Control Flow</li>
+                        <li>âœ“ Methods & Functions</li>
+                        <li>âœ“ Arrays & Collections</li>
+                        <li>âœ“ Exception Handling</li>
                     </ul>
                     <div class="difficulty">Beginner</div>
-                    <a href="java-basics/index.html" class="module-link">Explore →</a>
+                    <a href="java-basics/index.html" class="module-link">Explore â†’</a>
                 </div>
 
                 <!-- Module 2: OOP -->
@@ -77,14 +85,14 @@
                     <h3>Object-Oriented Programming</h3>
                     <p>Master the core concepts of OOP design</p>
                     <ul class="module-topics">
-                        <li>✓ Classes & Objects</li>
-                        <li>✓ Inheritance & Polymorphism</li>
-                        <li>✓ Encapsulation & Abstraction</li>
-                        <li>✓ Interfaces & Abstract Classes</li>
-                        <li>✓ Static & Inner Classes</li>
+                        <li>âœ“ Classes & Objects</li>
+                        <li>âœ“ Inheritance & Polymorphism</li>
+                        <li>âœ“ Encapsulation & Abstraction</li>
+                        <li>âœ“ Interfaces & Abstract Classes</li>
+                        <li>âœ“ Static & Inner Classes</li>
                     </ul>
                     <div class="difficulty">Intermediate</div>
-                    <a href="oops/index.html" class="module-link">Explore →</a>
+                    <a href="oops/index.html" class="module-link">Explore â†’</a>
                 </div>
 
                 <!-- Module 3: DSA -->
@@ -93,14 +101,14 @@
                     <h3>Data Structures & Algorithms</h3>
                     <p>Ace coding interviews and solve problems</p>
                     <ul class="module-topics">
-                        <li>✓ Arrays & Linked Lists</li>
-                        <li>✓ Trees & Graphs</li>
-                        <li>✓ Sorting & Searching</li>
-                        <li>✓ Dynamic Programming</li>
-                        <li>✓ LeetCode Problems</li>
+                        <li>âœ“ Arrays & Linked Lists</li>
+                        <li>âœ“ Trees & Graphs</li>
+                        <li>âœ“ Sorting & Searching</li>
+                        <li>âœ“ Dynamic Programming</li>
+                        <li>âœ“ LeetCode Problems</li>
                     </ul>
                     <div class="difficulty">Intermediate-Advanced</div>
-                    <a href="dsa/index.html" class="module-link">Explore →</a>
+                    <a href="dsa/index.html" class="module-link">Explore â†’</a>
                 </div>
 
                 <!-- Module 4: Java Backend -->
@@ -109,14 +117,14 @@
                     <h3>Java Backend Development</h3>
                     <p>Build production-ready REST APIs</p>
                     <ul class="module-topics">
-                        <li>✓ Spring Boot Basics</li>
-                        <li>✓ REST APIs</li>
-                        <li>✓ Database Integration</li>
-                        <li>✓ Security & Authentication</li>
-                        <li>✓ Best Practices</li>
+                        <li>âœ“ Spring Boot Basics</li>
+                        <li>âœ“ REST APIs</li>
+                        <li>âœ“ Database Integration</li>
+                        <li>âœ“ Security & Authentication</li>
+                        <li>âœ“ Best Practices</li>
                     </ul>
                     <div class="difficulty">Advanced</div>
-                    <a href="java-backend/index.html" class="module-link">Explore →</a>
+                    <a href="java-backend/index.html" class="module-link">Explore â†’</a>
                 </div>
 
                 <!-- Module 5: Spring AI & Agents -->
@@ -125,14 +133,14 @@
                     <h3>Spring AI & Agentic Systems</h3>
                     <p>The future: AI-powered Java applications</p>
                     <ul class="module-topics">
-                        <li>✓ Spring AI Intro</li>
-                        <li>✓ LangChain4j (RAG, Agents)</li>
-                        <li>✓ Agentscope Framework</li>
-                        <li>✓ Multi-Agent Architectures</li>
-                        <li>✓ Practical Examples</li>
+                        <li>âœ“ Spring AI Intro</li>
+                        <li>âœ“ LangChain4j (RAG, Agents)</li>
+                        <li>âœ“ Agentscope Framework</li>
+                        <li>âœ“ Multi-Agent Architectures</li>
+                        <li>âœ“ Practical Examples</li>
                     </ul>
                     <div class="difficulty">Advanced</div>
-                    <a href="spring-ai/index.html" class="module-link">Explore →</a>
+                    <a href="spring-ai/index.html" class="module-link">Explore â†’</a>
                 </div>
 
                 <!-- Module 6: Resources & Guides -->
@@ -141,14 +149,14 @@
                     <h3>Resources & Community</h3>
                     <p>Helpful links, guides, and community</p>
                     <ul class="module-topics">
-                        <li>✓ Official Documentation</li>
-                        <li>✓ Recommended Books</li>
-                        <li>✓ Practice Platforms</li>
-                        <li>✓ Interview Tips</li>
-                        <li>✓ Contribute & Learn</li>
+                        <li>âœ“ Official Documentation</li>
+                        <li>âœ“ Recommended Books</li>
+                        <li>âœ“ Practice Platforms</li>
+                        <li>âœ“ Interview Tips</li>
+                        <li>âœ“ Contribute & Learn</li>
                     </ul>
                     <div class="difficulty">All Levels</div>
-                    <a href="resources.html" class="module-link">Explore →</a>
+                    <a href="resources.html" class="module-link">Explore â†’</a>
                 </div>
 
             </div>
@@ -164,25 +172,25 @@
                     <h4>Java Basics</h4>
                     <p>2-3 weeks</p>
                 </div>
-                <div class="arrow">→</div>
+                <div class="arrow">â†’</div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h4>OOP Concepts</h4>
                     <p>3-4 weeks</p>
                 </div>
-                <div class="arrow">→</div>
+                <div class="arrow">â†’</div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h4>DSA Practice</h4>
                     <p>Ongoing</p>
                 </div>
-                <div class="arrow">→</div>
+                <div class="arrow">â†’</div>
                 <div class="step">
                     <div class="step-number">4</div>
                     <h4>Backend Dev</h4>
                     <p>4-6 weeks</p>
                 </div>
-                <div class="arrow">→</div>
+                <div class="arrow">â†’</div>
                 <div class="step">
                     <div class="step-number">5</div>
                     <h4>AI & Agents</h4>
@@ -197,32 +205,44 @@
             <h2>Why Choose This Hub?</h2>
             <div class="features-grid">
                 <div class="feature">
-                    <div class="feature-icon">✅</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
                     <h4>Structured Learning</h4>
                     <p>Follow a clear, logical progression from basics to advanced topics</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">💡</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    </div>
                     <h4>Practical Examples</h4>
                     <p>Real-world code examples you can run and modify</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">🎯</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
                     <h4>Interview Ready</h4>
                     <p>Master DSA and backend concepts for technical interviews</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">🤝</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
                     <h4>Community Driven</h4>
                     <p>Contribute, learn from others, and grow together</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">🚀</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
                     <h4>Cutting-Edge</h4>
                     <p>Learn the latest: Spring Boot, AI integration, and agent architectures</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">📱</div>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                    </div>
                     <h4>Always Accessible</h4>
                     <p>Free, open-source content available anytime, anywhere</p>
                 </div>
@@ -294,7 +314,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Java Learning Hub. Built with ☕ & ❤️ for the Java Community.</p>
+                <p>&copy; 2026 Java Learning Hub. Built for the Java Community.</p>
                 <p>Licensed under MIT License</p>
             </div>
         </div>
@@ -319,18 +339,53 @@
                 link.classList.add('active');
             }
         });
+        // Hamburger toggle logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Theme toggle logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateIcon('light');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme') || 'dark';
+                let targetTheme = theme === 'dark' ? 'light' : 'dark';
+                
+                if (targetTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                
+                localStorage.setItem('theme', targetTheme);
+                updateIcon(targetTheme);
+            });
+        }
+
+        function updateIcon(theme) {
+            if (theme === 'light') {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            } else {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            }
+        }
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,8 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">☕ Java Learning Hub</div>
+            <div class="logo">Java Learning Hub</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../java-basics/index.html">Java Basics</a></li>
@@ -18,6 +19,13 @@
                 <li><a href="index.html" class="active">DSA</a></li>
                 <li><a href="../java-backend/index.html">Backend</a></li>
                 <li><a href="../spring-ai/index.html">Spring AI</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg viewBox="0 0 24 24" id="themeIcon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -30,11 +38,11 @@
 
     <section class="module-hero">
         <div class="container">
-            <h1>🧮 Data Structures & Algorithms</h1>
+            <h1>Data Structures & Algorithms</h1>
             <p>Master problem-solving skills with comprehensive coverage of DS, Algorithms, and LeetCode problems</p>
             <div class="meta">
                 <span class="difficulty-badge hard">Intermediate-Advanced</span>
-                <span class="time-badge">⏱️ Ongoing Practice</span>
+                <span class="time-badge">Ongoing Practice</span>
             </div>
         </div>
     </section>
@@ -42,7 +50,7 @@
     <div class="container module-content">
         <aside class="sidebar">
             <div class="toc">
-                <h3>📚 Topics</h3>
+                <h3>Topics</h3>
                 <ul>
                     <li><a href="#arrays">Arrays & Strings</a></li>
                     <li><a href="#linked-lists">Linked Lists</a></li>
@@ -56,26 +64,26 @@
                 </ul>
             </div>
             <div class="sidebar-box">
-                <h4>💡 Resources</h4>
-                <p>⭐ <strong>LeetCode Reference:</strong> Each topic includes practice problems with links.</p>
-                <p>📖 <strong>DSA Reference:</strong> <a href="https://github.com/BEASTSHRIRAM/DSA-Java" target="_blank">BEASTSHRIRAM/DSA-Java</a></p>
+                <h4>Resources</h4>
+                <p><strong>LeetCode Reference:</strong> Each topic includes practice problems with links.</p>
+                <p><strong>DSA Reference:</strong> <a href="https://github.com/BEASTSHRIRAM/DSA-Java" target="_blank">BEASTSHRIRAM/DSA-Java</a></p>
             </div>
         </aside>
 
         <main class="main-content">
 
             <section id="intro" class="lesson">
-                <h2>📊 Introduction to DSA</h2>
+                <h2>Introduction to DSA</h2>
                 <p>Data Structures and Algorithms form the foundation of efficient programming. Understanding them helps you:</p>
 
                 <div class="key-points">
                     <strong>Why DSA Matters:</strong>
                     <ul>
-                        <li>✓ Write efficient, scalable code</li>
-                        <li>✓ Ace technical interviews</li>
-                        <li>✓ Optimize application performance</li>
-                        <li>✓ Solve complex problems</li>
-                        <li>✓ Think algorithmically</li>
+                        <li>âœ“ Write efficient, scalable code</li>
+                        <li>âœ“ Ace technical interviews</li>
+                        <li>âœ“ Optimize application performance</li>
+                        <li>âœ“ Solve complex problems</li>
+                        <li>âœ“ Think algorithmically</li>
                     </ul>
                 </div>
 
@@ -110,7 +118,7 @@
                             <td>Merge Sort, Quick Sort</td>
                         </tr>
                         <tr>
-                            <td><strong>O(n²)</strong></td>
+                            <td><strong>O(nÂ²)</strong></td>
                             <td>Quadratic</td>
                             <td>Bubble Sort, Nested Loop</td>
                         </tr>
@@ -129,33 +137,33 @@
             </section>
 
             <section id="arrays" class="lesson">
-                <h2>📦 Arrays & Strings</h2>
+                <h2>Arrays & Strings</h2>
 
                 <h3>Common Problems</h3>
                 <div class="practice-card">
-                    <h4>🔗 Two Sum | LeetCode #1</h4>
+                    <h4>ðŸ”— Two Sum | LeetCode #1</h4>
                     <p><strong>Problem:</strong> Given an array, find two numbers that add up to a target.</p>
                     <p><strong>Time: O(n), Space: O(n)</strong></p>
-                    <p><a href="https://leetcode.com/problems/two-sum/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/two-sum/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
 
                 <div class="practice-card">
-                    <h4>💧 Container With Most Water | LeetCode #11</h4>
+                    <h4>ðŸ’§ Container With Most Water | LeetCode #11</h4>
                     <p><strong>Problem:</strong> Find two lines that together with the x-axis form a container with maximum area.</p>
                     <p><strong>Time: O(n), Space: O(1)</strong></p>
-                    <p><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/container-with-most-water/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
 
                 <div class="practice-card">
-                    <h4>🔀 3Sum | LeetCode #15</h4>
+                    <h4>ðŸ”€ 3Sum | LeetCode #15</h4>
                     <p><strong>Problem:</strong> Find all unique triplets that sum to zero.</p>
-                    <p><strong>Time: O(n²), Space: O(1)</strong></p>
-                    <p><a href="https://leetcode.com/problems/3sum/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><strong>Time: O(nÂ²), Space: O(1)</strong></p>
+                    <p><a href="https://leetcode.com/problems/3sum/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
             </section>
 
             <section id="linked-lists" class="lesson">
-                <h2>🔗 Linked Lists</h2>
+                <h2>Linked Lists</h2>
 
                 <h3>Basic Operations</h3>
                 <div class="code-block">
@@ -217,20 +225,20 @@ class LinkedList {
 
                 <h3>LeetCode Problems</h3>
                 <div class="practice-card">
-                    <h4>🎯 Reverse Linked List | LeetCode #206</h4>
+                    <h4>ðŸŽ¯ Reverse Linked List | LeetCode #206</h4>
                     <p><strong>Time: O(n), Space: O(1)</strong></p>
-                    <p><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
 
                 <div class="practice-card">
-                    <h4>🔍 Detect Cycle | LeetCode #141</h4>
+                    <h4>ðŸ” Detect Cycle | LeetCode #141</h4>
                     <p><strong>Time: O(n), Space: O(1)</strong> - Use Floyd's algorithm</p>
-                    <p><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/linked-list-cycle/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
             </section>
 
             <section id="stacks-queues" class="lesson">
-                <h2>📚 Stacks & Queues</h2>
+                <h2>Stacks & Queues</h2>
 
                 <h3>Stack Implementation</h3>
                 <div class="code-block">
@@ -270,20 +278,20 @@ queue.isEmpty();     // Check if empty
 
                 <h3>Common Problems</h3>
                 <div class="practice-card">
-                    <h4>🎯 Valid Parentheses | LeetCode #20</h4>
+                    <h4>ðŸŽ¯ Valid Parentheses | LeetCode #20</h4>
                     <p><strong>Time: O(n), Space: O(n)</strong></p>
-                    <p><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/valid-parentheses/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
 
                 <div class="practice-card">
-                    <h4>👚 Implement Queue using Stacks | LeetCode #232</h4>
+                    <h4>ðŸ‘š Implement Queue using Stacks | LeetCode #232</h4>
                     <p><strong>Amortized Time: O(1)</strong></p>
-                    <p><a href="https://leetcode.com/problems/implement-queue-using-stacks/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/implement-queue-using-stacks/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
             </section>
 
             <section id="trees" class="lesson">
-                <h2>🌳 Trees & Binary Search Trees</h2>
+                <h2>Trees & Binary Search Trees</h2>
 
                 <h3>Tree Terminology</h3>
                 <ul>
@@ -377,20 +385,20 @@ void levelOrder(Node root) {
 
                 <h3>LeetCode Problems</h3>
                 <div class="practice-card">
-                    <h4>🌳 Validate Binary Search Tree | LeetCode #98</h4>
+                    <h4>ðŸŒ³ Validate Binary Search Tree | LeetCode #98</h4>
                     <p><strong>Time: O(n), Space: O(h)</strong></p>
-                    <p><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
 
                 <div class="practice-card">
-                    <h4>📊 Lowest Common Ancestor | LeetCode #236</h4>
+                    <h4>ðŸ“Š Lowest Common Ancestor | LeetCode #236</h4>
                     <p><strong>Time: O(n), Space: O(h)</strong></p>
-                    <p><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
             </section>
 
             <section id="graphs" class="lesson">
-                <h2>🔗 Graphs</h2>
+                <h2>Graphs</h2>
 
                 <h3>Graph Representations</h3>
                 <ul>
@@ -437,14 +445,14 @@ void bfs(int start, Map&lt;Integer, List&lt;Integer&gt;&gt; graph) {
                 </div>
 
                 <div class="practice-card">
-                    <h4>🔗 Number of Islands | LeetCode #200</h4>
-                    <p><strong>Time: O(m×n), Space: O(m×n)</strong></p>
-                    <p><a href="https://leetcode.com/problems/number-of-islands/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <h4>ðŸ”— Number of Islands | LeetCode #200</h4>
+                    <p><strong>Time: O(mÃ—n), Space: O(mÃ—n)</strong></p>
+                    <p><a href="https://leetcode.com/problems/number-of-islands/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
             </section>
 
             <section id="sorting" class="lesson">
-                <h2>🔀 Sorting Algorithms</h2>
+                <h2>Sorting Algorithms</h2>
 
                 <table class="data-types-table">
                     <thead>
@@ -461,8 +469,8 @@ void bfs(int start, Map&lt;Integer, List&lt;Integer&gt;&gt; graph) {
                         <tr>
                             <td>Bubble Sort</td>
                             <td>O(n)</td>
-                            <td>O(n²)</td>
-                            <td>O(n²)</td>
+                            <td>O(nÂ²)</td>
+                            <td>O(nÂ²)</td>
                             <td>O(1)</td>
                             <td>Yes</td>
                         </tr>
@@ -470,7 +478,7 @@ void bfs(int start, Map&lt;Integer, List&lt;Integer&gt;&gt; graph) {
                             <td>Quick Sort</td>
                             <td>O(n log n)</td>
                             <td>O(n log n)</td>
-                            <td>O(n²)</td>
+                            <td>O(nÂ²)</td>
                             <td>O(log n)</td>
                             <td>No</td>
                         </tr>
@@ -494,14 +502,14 @@ void bfs(int start, Map&lt;Integer, List&lt;Integer&gt;&gt; graph) {
                 </table>
 
                 <div class="practice-card">
-                    <h4>🔀 Sort an Array | LeetCode #912</h4>
+                    <h4>ðŸ”€ Sort an Array | LeetCode #912</h4>
                     <p><strong>Challenge:</strong> Implement multiple sorting algorithms</p>
-                    <p><a href="https://leetcode.com/problems/sort-an-array/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/sort-an-array/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
             </section>
 
             <section id="dp" class="lesson">
-                <h2>🧩 Dynamic Programming</h2>
+                <h2>Dynamic Programming</h2>
 
                 <h3>Top-Down (Memoization)</h3>
                 <div class="code-block">
@@ -541,25 +549,25 @@ long fib(int n) {
                 </div>
 
                 <div class="practice-card">
-                    <h4>💰 Coin Change | LeetCode #322</h4>
-                    <p><strong>Time: O(n×m), Space: O(n)</strong> where n=amount, m=coins</p>
-                    <p><a href="https://leetcode.com/problems/coin-change/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <h4>ðŸ’° Coin Change | LeetCode #322</h4>
+                    <p><strong>Time: O(nÃ—m), Space: O(n)</strong> where n=amount, m=coins</p>
+                    <p><a href="https://leetcode.com/problems/coin-change/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
 
                 <div class="practice-card">
-                    <h4>🏘️ House Robber | LeetCode #198</h4>
+                    <h4>ðŸ˜ï¸ House Robber | LeetCode #198</h4>
                     <p><strong>Time: O(n), Space: O(n)</strong></p>
-                    <p><a href="https://leetcode.com/problems/house-robber/" target="_blank">👉 Practice on LeetCode</a></p>
+                    <p><a href="https://leetcode.com/problems/house-robber/" target="_blank">ðŸ‘‰ Practice on LeetCode</a></p>
                 </div>
             </section>
 
             <div class="next-steps">
-                <h3>🚀 Practice Resources</h3>
+                <h3>Practice Resources</h3>
                 <ul style="list-style: none; text-align: left;">
-                    <li>✅ <a href="https://leetcode.com/" target="_blank"><strong>LeetCode</strong></a> - Top practice platform</li>
-                    <li>✅ <a href="https://github.com/BEASTSHRIRAM/DSA-Java" target="_blank"><strong>BEASTSHRIRAM/DSA-Java</strong></a> - Curated DSA solutions</li>
-                    <li>✅ <a href="https://www.interviewbit.com/" target="_blank"><strong>InterviewBit</strong></a> - Interview prep</li>
-                    <li>✅ <a href="https://www.geeksforgeeks.org/" target="_blank"><strong>GeeksforGeeks</strong></a> - Tutorials & explanations</li>
+                    <li><a href="https://leetcode.com/" target="_blank"><strong>LeetCode</strong></a> - Top practice platform</li>
+                    <li><a href="https://github.com/BEASTSHRIRAM/DSA-Java" target="_blank"><strong>BEASTSHRIRAM/DSA-Java</strong></a> - Curated DSA solutions</li>
+                    <li><a href="https://www.interviewbit.com/" target="_blank"><strong>InterviewBit</strong></a> - Interview prep</li>
+                    <li><a href="https://www.geeksforgeeks.org/" target="_blank"><strong>GeeksforGeeks</strong></a> - Tutorials & explanations</li>
                 </ul>
                 <a href="../index.html" class="btn btn-primary" style="margin-top: 1rem;">Back to Home</a>
             </div>
@@ -597,11 +605,60 @@ long fib(int n) {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Java Learning Hub. Built with ☕ & ❤️</p>
+                <p>&copy; 2026 Java Learning Hub. Built for the Java Community.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Hamburger toggle logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Theme toggle logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateIcon('light');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme') || 'dark';
+                let targetTheme = theme === 'dark' ? 'light' : 'dark';
+                
+                if (targetTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                
+                localStorage.setItem('theme', targetTheme);
+                updateIcon(targetTheme);
+            });
+        }
+
+        function updateIcon(theme) {
+            if (theme === 'light') {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            } else {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            }
+        }
+    </script>
 </body>
 </html>
+
+
+
 

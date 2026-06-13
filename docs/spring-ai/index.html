@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,8 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">☕ Java Learning Hub</div>
+            <div class="logo">Java Learning Hub</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../java-basics/index.html">Java Basics</a></li>
@@ -18,6 +19,13 @@
                 <li><a href="../dsa/index.html">DSA</a></li>
                 <li><a href="../java-backend/index.html">Backend</a></li>
                 <li><a href="index.html" class="active">Spring AI</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg viewBox="0 0 24 24" id="themeIcon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -30,11 +38,11 @@
 
     <section class="module-hero">
         <div class="container">
-            <h1>🤖 Spring AI & Agentic Systems</h1>
+            <h1>Spring AI & Agentic Systems</h1>
             <p>Master AI integration in Java with Spring Boot, LangChain4j, and multi-agent architectures</p>
             <div class="meta">
                 <span class="difficulty-badge hard">Advanced</span>
-                <span class="time-badge">⏱️ 4-6 weeks</span>
+                <span class="time-badge">4-6 weeks</span>
             </div>
         </div>
     </section>
@@ -42,7 +50,7 @@
     <div class="container module-content">
         <aside class="sidebar">
             <div class="toc">
-                <h3>📚 Table of Contents</h3>
+                <h3>Table of Contents</h3>
                 <ul>
                     <li><a href="#intro">Introduction</a></li>
                     <li><a href="#spring-ai-intro">Spring AI Intro</a></li>
@@ -56,7 +64,7 @@
                 </ul>
             </div>
             <div class="sidebar-box">
-                <h4>💡 Prerequisites</h4>
+                <h4>Prerequisites</h4>
                 <p>Complete Java Basics, OOP, and Java Backend modules before diving in!</p>
             </div>
         </aside>
@@ -64,32 +72,32 @@
         <main class="main-content">
 
             <section id="intro" class="lesson">
-                <h2>🎯 Introduction to AI in Java</h2>
+                <h2>Introduction to AI in Java</h2>
                 <p>Artificial Intelligence is transforming how applications work. Java offers powerful frameworks to build AI-powered applications:</p>
 
                 <div class="key-points">
                     <strong>Key Concepts:</strong>
                     <ul>
-                        <li>✓ <strong>LLMs (Large Language Models):</strong> GPT-4, Claude, Llama, etc.</li>
-                        <li>✓ <strong>RAG (Retrieval-Augmented Generation):</strong> Combine docs with LLM responses</li>
-                        <li>✓ <strong>Agents:</strong> AI systems that can use tools and make decisions</li>
-                        <li>✓ <strong>Multi-Agent Systems:</strong> Multiple agents collaborating to solve problems</li>
-                        <li>✓ <strong>Embeddings:</strong> Convert text to vectors for semantic search</li>
+                        <li>âœ“ <strong>LLMs (Large Language Models):</strong> GPT-4, Claude, Llama, etc.</li>
+                        <li>âœ“ <strong>RAG (Retrieval-Augmented Generation):</strong> Combine docs with LLM responses</li>
+                        <li>âœ“ <strong>Agents:</strong> AI systems that can use tools and make decisions</li>
+                        <li>âœ“ <strong>Multi-Agent Systems:</strong> Multiple agents collaborating to solve problems</li>
+                        <li>âœ“ <strong>Embeddings:</strong> Convert text to vectors for semantic search</li>
                     </ul>
                 </div>
 
                 <h3>Why Java for AI?</h3>
                 <ul>
-                    <li>✓ Enterprise-grade frameworks (Spring Boot, Spring AI)</li>
-                    <li>✓ Strong type system and error handling</li>
-                    <li>✓ Rich ecosystem (LangChain4j, Agentscope)</li>
-                    <li>✓ Integration with existing backends</li>
-                    <li>✓ High performance and scalability</li>
+                    <li>âœ“ Enterprise-grade frameworks (Spring Boot, Spring AI)</li>
+                    <li>âœ“ Strong type system and error handling</li>
+                    <li>âœ“ Rich ecosystem (LangChain4j, Agentscope)</li>
+                    <li>âœ“ Integration with existing backends</li>
+                    <li>âœ“ High performance and scalability</li>
                 </ul>
             </section>
 
             <section id="spring-ai-intro" class="lesson">
-                <h2>⚙️ Spring AI Introduction</h2>
+                <h2>Spring AI Introduction</h2>
 
                 <h3>Overview</h3>
                 <p>Spring AI provides a unified API for integrating AI/ML models into Spring Boot applications. It abstracts away provider-specific implementations (OpenAI, Anthropic, Ollama, etc.).</p>
@@ -146,7 +154,7 @@ public class AIChatService {
             </section>
 
             <section id="langchain4j" class="lesson">
-                <h2>🔗 LangChain4j Complete Guide</h2>
+                <h2>LangChain4j Complete Guide</h2>
 
                 <h3>What is LangChain4j?</h3>
                 <p>LangChain4j brings the power of LangChain (Python) to Java. It provides abstractions for:</p>
@@ -240,7 +248,7 @@ public class ChatWithMemory {
             </section>
 
             <section id="rag" class="lesson">
-                <h2>📚 RAG (Retrieval-Augmented Generation)</h2>
+                <h2>RAG (Retrieval-Augmented Generation)</h2>
 
                 <h3>What is RAG?</h3>
                 <p>RAG combines document retrieval with generation. Instead of relying solely on the model's training data, it:</p>
@@ -372,7 +380,7 @@ System.out.println("Response: " + response);
             </section>
 
             <section id="agents" class="lesson">
-                <h2>🤖 Agents and Tool Use</h2>
+                <h2>Agents and Tool Use</h2>
 
                 <h3>What are Agents?</h3>
                 <p>An agent is an AI system that can:</p>
@@ -469,7 +477,7 @@ MathAssistant assistant = new MathAssistant() {
             </section>
 
             <section id="agentscope" class="lesson">
-                <h2>🌐 Agentscope Framework</h2>
+                <h2>Agentscope Framework</h2>
 
                 <h3>Introduction to Agentscope</h3>
                 <p>Agentscope is an open-source framework for building multi-agent systems. While primarily Python-based, it can be integrated with Java backends.</p>
@@ -477,11 +485,11 @@ MathAssistant assistant = new MathAssistant() {
                 <div class="key-points">
                     <strong>Key Features:</strong>
                     <ul>
-                        <li>✓ Distributed agent execution</li>
-                        <li>✓ Built-in MSGHub for agent communication</li>
-                        <li>✓ Service toolkit integration</li>
-                        <li>✓ Memory and state management</li>
-                        <li>✓ Web UI for monitoring</li>
+                        <li>âœ“ Distributed agent execution</li>
+                        <li>âœ“ Built-in MSGHub for agent communication</li>
+                        <li>âœ“ Service toolkit integration</li>
+                        <li>âœ“ Memory and state management</li>
+                        <li>âœ“ Web UI for monitoring</li>
                     </ul>
                 </div>
 
@@ -523,7 +531,7 @@ public class AgentScopeClient {
             </section>
 
             <section id="multiagent" class="lesson">
-                <h2>👥 Multi-Agent Architectures</h2>
+                <h2>Multi-Agent Architectures</h2>
 
                 <h3>Common Patterns</h3>
 
@@ -614,7 +622,7 @@ public class AgentScopeClient {
             </section>
 
             <section id="examples" class="lesson">
-                <h2>💻 Complete Code Examples</h2>
+                <h2>Complete Code Examples</h2>
 
                 <h3>Example 1: Document Q&A System</h3>
                 <div class="code-block">
@@ -657,7 +665,7 @@ public class AgentScopeClient {
                     <pre><code>public class SmartAssistant {
     @Tool("Get current weather")
     public String getWeather(String city) {
-        return "Weather in " + city + ": Sunny, 72°F";
+        return "Weather in " + city + ": Sunny, 72Â°F";
     }
 
     @Tool("Calculate distance")
@@ -686,10 +694,10 @@ public class AgentScopeClient {
             </section>
 
             <section id="resources" class="lesson">
-                <h2>📚 Resources & References</h2>
-
+                <h2>Resources & References</h2>
+                
                 <div class="practice-card">
-                    <h4>🔗 Official Documentation</h4>
+                    <h4>Official Documentation</h4>
                     <ul>
                         <li><a href="https://docs.spring.io/spring-ai/docs/current/reference/html/" target="_blank">Spring AI Documentation</a></li>
                         <li><a href="https://docs.langchain4j.dev/" target="_blank">LangChain4j Docs</a></li>
@@ -698,7 +706,7 @@ public class AgentScopeClient {
                 </div>
 
                 <div class="practice-card">
-                    <h4>🎓 Learning Resources</h4>
+                    <h4>Learning Resources</h4>
                     <ul>
                         <li><a href="https://github.com/langchain4j/langchain4j-examples" target="_blank">LangChain4j Examples</a></li>
                         <li><a href="https://spring.io/projects/spring-ai" target="_blank">Spring AI Project</a></li>
@@ -707,7 +715,7 @@ public class AgentScopeClient {
                 </div>
 
                 <div class="practice-card">
-                    <h4>🛠️ Tools & APIs</h4>
+                    <h4>Tools & APIs</h4>
                     <ul>
                         <li><a href="https://platform.openai.com/" target="_blank">OpenAI API</a></li>
                         <li><a href="https://www.anthropic.com/" target="_blank">Claude API</a></li>
@@ -716,7 +724,7 @@ public class AgentScopeClient {
                 </div>
 
                 <div class="practice-card">
-                    <h4>💡 Common Patterns</h4>
+                    <h4>Common Patterns</h4>
                     <ul>
                         <li>Retrieval-Augmented Generation (RAG)</li>
                         <li>Chain of Thought Prompting</li>
@@ -728,14 +736,14 @@ public class AgentScopeClient {
             </section>
 
             <div class="next-steps">
-                <h3>🚀 Next Steps</h3>
+                <h3>Next Steps</h3>
                 <p>Build your first AI-powered Java application!</p>
                 <ul style="list-style: none; margin: 1rem 0; text-align: left;">
-                    <li>✅ Set up Spring AI project</li>
-                    <li>✅ Create simple chat application</li>
-                    <li>✅ Build RAG system with your documents</li>
-                    <li>✅ Create agent with custom tools</li>
-                    <li>✅ Deploy to production</li>
+                    <li>Set up Spring AI project</li>
+                    <li>Create simple chat application</li>
+                    <li>Build RAG system with your documents</li>
+                    <li>Create agent with custom tools</li>
+                    <li>Deploy to production</li>
                 </ul>
                 <a href="../index.html" class="btn btn-primary" style="margin-top: 1rem;">Back to Home</a>
             </div>
@@ -773,11 +781,60 @@ public class AgentScopeClient {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Java Learning Hub. Built with ☕ & ❤️ for the Future of AI in Java</p>
+                <p>&copy; 2026 Java Learning Hub. Built for the Java Community.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Hamburger toggle logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Theme toggle logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateIcon('light');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme') || 'dark';
+                let targetTheme = theme === 'dark' ? 'light' : 'dark';
+                
+                if (targetTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                
+                localStorage.setItem('theme', targetTheme);
+                updateIcon(targetTheme);
+            });
+        }
+
+        function updateIcon(theme) {
+            if (theme === 'light') {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            } else {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            }
+        }
+    </script>
 </body>
 </html>
+
+
+
 

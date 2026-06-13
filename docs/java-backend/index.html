@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,8 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">☕ Java Learning Hub</div>
+            <div class="logo">Java Learning Hub</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../java-basics/index.html">Java Basics</a></li>
@@ -18,6 +19,13 @@
                 <li><a href="../dsa/index.html">DSA</a></li>
                 <li><a href="index.html" class="active">Backend</a></li>
                 <li><a href="../spring-ai/index.html">Spring AI</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg viewBox="0 0 24 24" id="themeIcon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -30,11 +38,11 @@
 
     <section class="module-hero">
         <div class="container">
-            <h1>⚙️ Java Backend Development</h1>
+            <h1>Java Backend Development</h1>
             <p>Build production-ready REST APIs using Spring Boot and modern best practices</p>
             <div class="meta">
                 <span class="difficulty-badge hard">Advanced</span>
-                <span class="time-badge">⏱️ 4-6 weeks</span>
+                <span class="time-badge">4-6 weeks</span>
             </div>
         </div>
     </section>
@@ -42,7 +50,7 @@
     <div class="container module-content">
         <aside class="sidebar">
             <div class="toc">
-                <h3>📚 Table of Contents</h3>
+                <h3>Table of Contents</h3>
                 <ul>
                     <li><a href="#intro">Backend Basics</a></li>
                     <li><a href="#spring-intro">Spring Boot Intro</a></li>
@@ -55,7 +63,7 @@
                 </ul>
             </div>
             <div class="sidebar-box">
-                <h4>💡 Prerequisites</h4>
+                <h4>Prerequisites</h4>
                 <p>Complete Java Basics, OOP, and have basic REST API knowledge.</p>
             </div>
         </aside>
@@ -63,7 +71,7 @@
         <main class="main-content">
 
             <section id="intro" class="lesson">
-                <h2>🏗️ Backend Development Basics</h2>
+                <h2>Backend Development Basics</h2>
 
                 <h3>What is Backend?</h3>
                 <p>Backend is the server-side of an application that handles:</p>
@@ -78,31 +86,31 @@
                 <h3>Backend Architecture</h3>
                 <div class="code-block">
                     <pre><code>Client (Frontend)
-     ↓
+     â†“
 Request (HTTP/HTTPS)
-     ↓
+     â†“
 API Layer (REST Endpoints)
-     ↓
+     â†“
 Service Layer (Business Logic)
-     ↓
+     â†“
 DAO/Repository (Data Access)
-     ↓
+     â†“
 Database (MySQL, PostgreSQL, etc.)
 </code></pre>
                 </div>
 
                 <h3>Why Spring Boot?</h3>
                 <ul>
-                    <li>✓ Simplified Spring configuration</li>
-                    <li>✓ Embedded server (Tomcat)</li>
-                    <li>✓ Auto-configuration</li>
-                    <li>✓ Extensive ecosystem</li>
-                    <li>✓ Production-ready</li>
+                    <li>âœ“ Simplified Spring configuration</li>
+                    <li>âœ“ Embedded server (Tomcat)</li>
+                    <li>âœ“ Auto-configuration</li>
+                    <li>âœ“ Extensive ecosystem</li>
+                    <li>âœ“ Production-ready</li>
                 </ul>
             </section>
 
             <section id="spring-intro" class="lesson">
-                <h2>🌱 Spring Boot Introduction</h2>
+                <h2>Spring Boot Introduction</h2>
 
                 <h3>Setup Spring Boot Project</h3>
                 <div class="code-block">
@@ -165,7 +173,7 @@ public class MyApplication {
             </section>
 
             <section id="rest-api" class="lesson">
-                <h2>🔗 Building REST APIs</h2>
+                <h2>Building REST APIs</h2>
 
                 <h3>REST Principles</h3>
                 <ul>
@@ -324,7 +332,7 @@ curl -X DELETE http://localhost:8080/api/users/1
             </section>
 
             <section id="database" class="lesson">
-                <h2>🗄️ Database Integration</h2>
+                <h2>Database Integration</h2>
 
                 <h3>JPA & Hibernate</h3>
                 <p>JPA (Java Persistence API) is an ORM (Object-Relational Mapping) framework.</p>
@@ -401,7 +409,7 @@ public class Course {
             </section>
 
             <section id="security" class="lesson">
-                <h2>🔐 Security & Authentication</h2>
+                <h2>Security & Authentication</h2>
 
                 <h3>Spring Security Setup</h3>
                 <div class="code-block">
@@ -476,7 +484,7 @@ public class JwtTokenProvider {
             </section>
 
             <section id="testing" class="lesson">
-                <h2>🧪 Testing</h2>
+                <h2>Testing</h2>
 
                 <h3>Unit Testing with JUnit & Mockito</h3>
                 <div class="code-block">
@@ -545,7 +553,7 @@ public class UserControllerIntegrationTest {
             </section>
 
             <section id="deployment" class="lesson">
-                <h2>🚀 Deployment</h2>
+                <h2>Deployment</h2>
 
                 <h3>Build JAR File</h3>
                 <div class="code-block">
@@ -584,7 +592,7 @@ docker run -p 8080:8080 my-java-app
             </section>
 
             <section id="best-practices" class="lesson">
-                <h2>⭐ Backend Best Practices</h2>
+                <h2>Backend Best Practices</h2>
 
                 <div class="practice-card">
                     <h4>1. Use Dependency Injection</h4>
@@ -628,7 +636,7 @@ docker run -p 8080:8080 my-java-app
             </section>
 
             <div class="next-steps">
-                <h3>📚 Next Steps</h3>
+                <h3>Next Steps</h3>
                 <p>Once you've mastered Backend, explore:</p>
                 <a href="../spring-ai/index.html" class="btn btn-primary">Learn Spring AI & Agents</a>
             </div>
@@ -666,11 +674,60 @@ docker run -p 8080:8080 my-java-app
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Java Learning Hub. Built with ☕ & ❤️</p>
+                <p>&copy; 2026 Java Learning Hub. Built for the Java Community.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Hamburger toggle logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Theme toggle logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateIcon('light');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme') || 'dark';
+                let targetTheme = theme === 'dark' ? 'light' : 'dark';
+                
+                if (targetTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                
+                localStorage.setItem('theme', targetTheme);
+                updateIcon(targetTheme);
+            });
+        }
+
+        function updateIcon(theme) {
+            if (theme === 'light') {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            } else {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            }
+        }
+    </script>
 </body>
 </html>
+
+
+
 

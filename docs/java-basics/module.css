@@ -1,7 +1,7 @@
 /* Module Content Styles */
 
 .breadcrumb {
-    background-color: var(--light-bg);
+    background-color: var(--surface-light);
     padding: 1rem 0;
     border-bottom: 1px solid var(--border-color);
     font-size: 0.95rem;
@@ -17,13 +17,13 @@
 }
 
 .breadcrumb span {
-    color: var(--text-light);
+    color: var(--text-secondary);
 }
 
 /* Module Hero */
 .module-hero {
-    background: linear-gradient(135deg, var(--dark-bg), #2a2a2a);
-    color: white;
+    background: linear-gradient(135deg, var(--bg-color), var(--surface-color));
+    color: var(--text-primary);
     padding: 3rem 0;
     border-bottom: 3px solid var(--primary-color);
 }
@@ -70,10 +70,10 @@
 }
 
 .time-badge {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--surface-light);
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    color: white;
+    color: var(--text-primary);
     font-size: 0.9rem;
 }
 
@@ -94,7 +94,7 @@
 }
 
 .toc {
-    background-color: var(--light-bg);
+    background-color: var(--surface-light);
     padding: 1.5rem;
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -104,7 +104,7 @@
 .toc h3 {
     font-size: 1.1rem;
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 .toc ul {
@@ -116,7 +116,7 @@
 }
 
 .toc a {
-    color: var(--text-light);
+    color: var(--text-secondary);
     text-decoration: none;
     transition: all 0.3s;
     display: block;
@@ -142,18 +142,18 @@
 
 .sidebar-box p {
     font-size: 0.9rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
 }
 
 /* Main Content */
 .main-content {
-    background-color: white;
+    background-color: var(--surface-color);
 }
 
 .lesson {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
-    border-bottom: 2px solid var(--light-bg);
+    border-bottom: 2px solid var(--surface-light);
 }
 
 .lesson:last-of-type {
@@ -163,14 +163,14 @@
 .lesson h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 .lesson h3 {
     font-size: 1.3rem;
     margin-top: 1.5rem;
     margin-bottom: 0.8rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 .lesson h4 {
@@ -183,7 +183,7 @@
 .lesson p {
     margin-bottom: 1rem;
     line-height: 1.8;
-    color: var(--text-light);
+    color: var(--text-secondary);
 }
 
 .lesson a {
@@ -215,7 +215,7 @@
 
 /* Code Blocks */
 .code-block {
-    background-color: #f5f5f5;
+    background-color: var(--surface-light);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     padding: 1rem;
@@ -226,12 +226,12 @@
 .code-block pre {
     font-family: 'Courier New', monospace;
     font-size: 0.9rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
     margin: 0;
 }
 
 .code-block code {
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 /* Tables */
@@ -239,7 +239,7 @@
     width: 100%;
     border-collapse: collapse;
     margin: 1.5rem 0;
-    background-color: white;
+    background-color: var(--surface-color);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -259,15 +259,15 @@
 }
 
 .data-types-table tr:hover {
-    background-color: var(--light-bg);
+    background-color: var(--surface-light);
 }
 
 .data-types-table code {
-    background-color: #f5f5f5;
+    background-color: var(--surface-light);
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-family: 'Courier New', monospace;
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 /* Lists */
@@ -278,12 +278,12 @@
 
 .lesson li {
     margin-bottom: 0.5rem;
-    color: var(--text-light);
+    color: var(--text-secondary);
 }
 
 /* Practice Cards */
 .practice-card {
-    background-color: var(--light-bg);
+    background-color: var(--surface-light);
     border-left: 4px solid var(--primary-color);
     padding: 1.5rem;
     margin: 1rem 0;
@@ -307,7 +307,7 @@
 }
 
 .practice-card strong {
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 /* Next Steps */
@@ -323,7 +323,7 @@
 .next-steps h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-dark);
+    color: var(--text-primary);
 }
 
 .next-steps p {
@@ -445,8 +445,10 @@
     }
 
     .code-block {
-        background-color: #f0f0f0;
+        background-color: var(--surface-light);
         border: 1px solid #ccc;
     }
 }
+
+
 

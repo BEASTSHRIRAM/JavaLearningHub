@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,8 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">☕ Java Learning Hub</div>
+            <div class="logo">Java Learning Hub</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="index.html" class="active">Java Basics</a></li>
@@ -18,6 +19,13 @@
                 <li><a href="../dsa/index.html">DSA</a></li>
                 <li><a href="../java-backend/index.html">Backend</a></li>
                 <li><a href="../spring-ai/index.html">Spring AI</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg viewBox="0 0 24 24" id="themeIcon">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -30,11 +38,11 @@
 
     <section class="module-hero">
         <div class="container">
-            <h1>📖 Java Basics</h1>
+            <h1>Java Basics</h1>
             <p>Master the fundamentals of Java programming. Perfect for beginners!</p>
             <div class="meta">
                 <span class="difficulty-badge easy">Beginner</span>
-                <span class="time-badge">⏱️ 2-3 weeks</span>
+                <span class="time-badge">2-3 weeks</span>
             </div>
         </div>
     </section>
@@ -42,7 +50,7 @@
     <div class="container module-content">
         <aside class="sidebar">
             <div class="toc">
-                <h3>📚 Table of Contents</h3>
+                <h3>Table of Contents</h3>
                 <ul>
                     <li><a href="#intro">Introduction</a></li>
                     <li><a href="#setup">Setup & Environment</a></li>
@@ -57,7 +65,7 @@
                 </ul>
             </div>
             <div class="sidebar-box">
-                <h4>💡 Tips</h4>
+                <h4>Tips</h4>
                 <p>Take your time with fundamentals. They form the foundation for everything else!</p>
             </div>
         </aside>
@@ -65,23 +73,23 @@
         <main class="main-content">
 
             <section id="intro" class="lesson">
-                <h2>🎯 Introduction to Java</h2>
+                <h2>Introduction to Java</h2>
                 <p>Java is a versatile, object-oriented programming language that runs on the Java Virtual Machine (JVM). It's used for everything from web applications to Android apps and enterprise systems.</p>
 
                 <div class="key-points">
                     <strong>Key Characteristics:</strong>
                     <ul>
-                        <li>✓ <strong>Platform Independent:</strong> Write once, run anywhere (WORA)</li>
-                        <li>✓ <strong>Object-Oriented:</strong> Everything is an object</li>
-                        <li>✓ <strong>Statically Typed:</strong> Type checking at compile time</li>
-                        <li>✓ <strong>Garbage Collection:</strong> Automatic memory management</li>
-                        <li>✓ <strong>Rich Ecosystem:</strong> Massive libraries and frameworks</li>
+                        <li>âœ“ <strong>Platform Independent:</strong> Write once, run anywhere (WORA)</li>
+                        <li>âœ“ <strong>Object-Oriented:</strong> Everything is an object</li>
+                        <li>âœ“ <strong>Statically Typed:</strong> Type checking at compile time</li>
+                        <li>âœ“ <strong>Garbage Collection:</strong> Automatic memory management</li>
+                        <li>âœ“ <strong>Rich Ecosystem:</strong> Massive libraries and frameworks</li>
                     </ul>
                 </div>
             </section>
 
             <section id="setup" class="lesson">
-                <h2>⚙️ Setup & Environment</h2>
+                <h2>Setup & Environment</h2>
 
                 <h3>Install Java Development Kit (JDK)</h3>
                 <p>Download and install from: <a href="https://www.oracle.com/java/technologies/downloads/" target="_blank">Oracle JDK</a></p>
@@ -118,7 +126,7 @@ java HelloWorld</code></pre>
             </section>
 
             <section id="variables" class="lesson">
-                <h2>📝 Variables & Data Types</h2>
+                <h2>Variables & Data Types</h2>
 
                 <h3>Primitive Data Types</h3>
                 <table class="data-types-table">
@@ -158,13 +166,13 @@ java HelloWorld</code></pre>
                         <tr>
                             <td><code>float</code></td>
                             <td>4 bytes</td>
-                            <td>±3.4 × 10^38</td>
+                            <td>Â±3.4 Ã— 10^38</td>
                             <td><code>float f = 3.14f;</code></td>
                         </tr>
                         <tr>
                             <td><code>double</code></td>
                             <td>8 bytes</td>
-                            <td>±1.7 × 10^308</td>
+                            <td>Â±1.7 Ã— 10^308</td>
                             <td><code>double d = 3.14;</code></td>
                         </tr>
                         <tr>
@@ -203,7 +211,7 @@ HashMap&lt;String, Integer&gt; map = new HashMap&lt;&gt;();</code></pre>
             </section>
 
             <section id="operators" class="lesson">
-                <h2>🔧 Operators</h2>
+                <h2>Operators</h2>
 
                 <h3>Arithmetic Operators</h3>
                 <div class="code-block">
@@ -248,7 +256,7 @@ num %= 5;   // num = 1</code></pre>
             </section>
 
             <section id="control-flow" class="lesson">
-                <h2>🔀 Control Flow</h2>
+                <h2>Control Flow</h2>
 
                 <h3>if-else Statement</h3>
                 <div class="code-block">
@@ -316,7 +324,7 @@ do {
             </section>
 
             <section id="methods" class="lesson">
-                <h2>🛠️ Methods & Functions</h2>
+                <h2>Methods & Functions</h2>
 
                 <h3>Method Syntax</h3>
                 <div class="code-block">
@@ -362,7 +370,7 @@ calc.greet();                            // Hello!</code></pre>
             </section>
 
             <section id="arrays" class="lesson">
-                <h2>📦 Arrays & Collections</h2>
+                <h2>Arrays & Collections</h2>
 
                 <h3>Arrays</h3>
                 <div class="code-block">
@@ -424,7 +432,7 @@ for (String key : map.keySet()) {
             </section>
 
             <section id="strings" class="lesson">
-                <h2>📄 Strings</h2>
+                <h2>Strings</h2>
 
                 <h3>String Basics</h3>
                 <div class="code-block">
@@ -469,7 +477,7 @@ String[] words = "Hello World Java".split(" ");
             </section>
 
             <section id="exceptions" class="lesson">
-                <h2>⚠️ Exception Handling</h2>
+                <h2>Exception Handling</h2>
 
                 <div class="code-block">
                     <pre><code>public class ExceptionExample {
@@ -513,7 +521,7 @@ String[] words = "Hello World Java".split(" ");
             </section>
 
             <section id="practice" class="lesson">
-                <h2>🎯 Practice Problems</h2>
+                <h2>Practice Problems</h2>
 
                 <div class="practice-card">
                     <h4>Problem 1: Simple Calculator</h4>
@@ -524,13 +532,13 @@ String[] words = "Hello World Java".split(" ");
                 <div class="practice-card">
                     <h4>Problem 2: Factorial Calculation</h4>
                     <p>Write a method that calculates the factorial of a number using a loop.</p>
-                    <p><strong>Example:</strong> factorial(5) = 5 × 4 × 3 × 2 × 1 = 120</p>
+                    <p><strong>Example:</strong> factorial(5) = 5 Ã— 4 Ã— 3 Ã— 2 Ã— 1 = 120</p>
                 </div>
 
                 <div class="practice-card">
                     <h4>Problem 3: Reverse a String</h4>
                     <p>Create a method that reverses a given string without using built-in reverse method.</p>
-                    <p><strong>Example:</strong> "Hello" → "olleH"</p>
+                    <p><strong>Example:</strong> "Hello" â†’ "olleH"</p>
                 </div>
 
                 <div class="practice-card">
@@ -547,7 +555,7 @@ String[] words = "Hello World Java".split(" ");
             </section>
 
             <div class="next-steps">
-                <h3>📚 Next Steps</h3>
+                <h3>Next Steps</h3>
                 <p>Once you've mastered Java Basics, move on to:</p>
                 <a href="../oops/index.html" class="btn btn-primary">Learn Object-Oriented Programming</a>
             </div>
@@ -585,11 +593,60 @@ String[] words = "Hello World Java".split(" ");
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Java Learning Hub. Built with ☕ & ❤️</p>
+                <p>&copy; 2026 Java Learning Hub. Built for the Java Community.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Hamburger toggle logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        if (hamburger) {
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Theme toggle logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        const currentTheme = localStorage.getItem('theme') || 
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        
+        if (currentTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            updateIcon('light');
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                let theme = document.documentElement.getAttribute('data-theme') || 'dark';
+                let targetTheme = theme === 'dark' ? 'light' : 'dark';
+                
+                if (targetTheme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                }
+                
+                localStorage.setItem('theme', targetTheme);
+                updateIcon(targetTheme);
+            });
+        }
+
+        function updateIcon(theme) {
+            if (theme === 'light') {
+                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+            } else {
+                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+            }
+        }
+    </script>
 </body>
 </html>
+
+
+
 

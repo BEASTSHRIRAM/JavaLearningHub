@@ -1,15 +1,18 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Object-Oriented Programming - Java Learning Hub</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container">
             <div class="logo">Java Learning Hub</div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">&#9776;</button>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../java-basics/index.html">Java Basics</a></li>
@@ -68,29 +71,44 @@
 
             <section id="classes" class="lesson">
                 <h2>Classes and Objects</h2>
-                <p>A class is a template for an object, and an object is an instance of a class. A class creates a new data type that can be used to create objects.</p>
-                <p>When you declare an object of a class, you are creating an instance of that class. Thus, a class is a logical construct. An object has physical reality. (That is, an object occupies space in memory.)</p>
-                <p>Objects are characterized by three essential properties: state, identity, and behavior. The state of an object is a value from its data type. The identity of an object distinguishes one object from another. The behavior of an object is the effect of data-type operations.</p>
-                
+                <p>A class is a template for an object, and an object is an instance of a class. A class creates a new
+                    data type that can be used to create objects.</p>
+                <p>When you declare an object of a class, you are creating an instance of that class. Thus, a class is a
+                    logical construct. An object has physical reality. (That is, an object occupies space in memory.)
+                </p>
+                <p>Objects are characterized by three essential properties: state, identity, and behavior. The state of
+                    an object is a value from its data type. The identity of an object distinguishes one object from
+                    another. The behavior of an object is the effect of data-type operations.</p>
+
                 <h3>Memory Allocation</h3>
-                <p>The <code>new</code> keyword dynamically allocates memory for an object and returns a reference to it. In Java, all class objects must be dynamically allocated.</p>
+                <p>The <code>new</code> keyword dynamically allocates memory for an object and returns a reference to
+                    it. In Java, all class objects must be dynamically allocated.</p>
                 <div class="code-block">
                     <pre><code>Box mybox; // declare reference to object
 mybox = new Box(); // allocate a Box object</code></pre>
                 </div>
-                <p>When you assign one object reference variable to another object reference variable, you are not creating a copy of the object, you are only making a copy of the reference. Both will refer to the same object.</p>
+                <p>When you assign one object reference variable to another object reference variable, you are not
+                    creating a copy of the object, you are only making a copy of the reference. Both will refer to the
+                    same object.</p>
             </section>
 
             <section id="constructors" class="lesson">
                 <h2>Constructors, this, finalize</h2>
-                <p>Once defined, the constructor is automatically called when the object is created, before the <code>new</code> operator completes. Constructors have no return type, not even void. The implicit return type is the class type itself.</p>
-                <p>Any class will have a default constructor, does not matter if we declare it in the class or not. If we inherit a class, then the derived class must call its super class constructor explicitly or implicitly.</p>
-                
+                <p>Once defined, the constructor is automatically called when the object is created, before the
+                    <code>new</code> operator completes. Constructors have no return type, not even void. The implicit
+                    return type is the class type itself.</p>
+                <p>Any class will have a default constructor, does not matter if we declare it in the class or not. If
+                    we inherit a class, then the derived class must call its super class constructor explicitly or
+                    implicitly.</p>
+
                 <h3>The this Keyword</h3>
-                <p>Sometimes a method will need to refer to the object that invoked it. <code>this</code> can be used inside any method to refer to the current object. It is always a reference to the object on which the method was invoked.</p>
-                
+                <p>Sometimes a method will need to refer to the object that invoked it. <code>this</code> can be used
+                    inside any method to refer to the current object. It is always a reference to the object on which
+                    the method was invoked.</p>
+
                 <h3>The finalize() Method</h3>
-                <p>Java provides a mechanism called finalization. By using finalization, you can define specific actions that will occur when an object is just about to be reclaimed by the garbage collector.</p>
+                <p>Java provides a mechanism called finalization. By using finalization, you can define specific actions
+                    that will occur when an object is just about to be reclaimed by the garbage collector.</p>
                 <div class="code-block">
                     <pre><code>protected void finalize( ) {
     // finalization code here
@@ -100,8 +118,10 @@ mybox = new Box(); // allocate a Box object</code></pre>
 
             <section id="encapsulation" class="lesson">
                 <h2>Access Control</h2>
-                <p>How a member can be accessed is determined by the access modifier attached to its declaration. Usually, you will want to restrict access to the data members of a class, allowing access only through methods.</p>
-                
+                <p>How a member can be accessed is determined by the access modifier attached to its declaration.
+                    Usually, you will want to restrict access to the data members of a class, allowing access only
+                    through methods.</p>
+
                 <h3>Modifiers Matrix</h3>
                 <table class="data-types-table">
                     <thead>
@@ -153,13 +173,18 @@ mybox = new Box(); // allocate a Box object</code></pre>
 
             <section id="inheritance" class="lesson">
                 <h2>Inheritance, super, and final</h2>
-                <p>To inherit a class, incorporate the definition of one class into another using the <code>extends</code> keyword. Java does not support the inheritance of multiple superclasses into a single subclass.</p>
-                
+                <p>To inherit a class, incorporate the definition of one class into another using the
+                    <code>extends</code> keyword. Java does not support the inheritance of multiple superclasses into a
+                    single subclass.</p>
+
                 <h3>Superclass References</h3>
-                <p>A superclass variable can reference a subclass object. However, you will have access only to those parts of the object defined by the superclass.</p>
+                <p>A superclass variable can reference a subclass object. However, you will have access only to those
+                    parts of the object defined by the superclass.</p>
 
                 <h3>Using super</h3>
-                <p>The keyword <code>super</code> has two forms. The first calls the superclass's constructor. The second is used to access a member of the superclass that has been hidden by a member of a subclass.</p>
+                <p>The keyword <code>super</code> has two forms. The first calls the superclass's constructor. The
+                    second is used to access a member of the superclass that has been hidden by a member of a subclass.
+                </p>
                 <div class="code-block">
                     <pre><code>BoxWeight(double w, double h, double d, double m) {
     super(w, h, d); // call superclass constructor
@@ -168,28 +193,45 @@ mybox = new Box(); // allocate a Box object</code></pre>
                 </div>
 
                 <h3>The final Keyword</h3>
-                <p>The keyword <code>final</code> has three uses: to create named constants, to prevent a method from being overridden, and to prevent a class from being inherited.</p>
+                <p>The keyword <code>final</code> has three uses: to create named constants, to prevent a method from
+                    being overridden, and to prevent a class from being inherited.</p>
             </section>
 
             <section id="polymorphism" class="lesson">
                 <h2>Polymorphism (Overriding & Overloading)</h2>
-                
+
                 <h3>Method Overloading (Compile-Time)</h3>
-                <p>Defining two or more methods within the same class that share the same name, as long as their parameter declarations are different. Return type alone is insufficient to distinguish them.</p>
+                <p>Defining two or more methods within the same class that share the same name, as long as their
+                    parameter declarations are different. Return type alone is insufficient to distinguish them.</p>
 
                 <h3>Method Overriding (Run-Time)</h3>
-                <p>When a method in a subclass has the same name and type signature as a method in its superclass, it overrides the method. Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at run time, rather than compile time.</p>
+                <p>When a method in a subclass has the same name and type signature as a method in its superclass, it
+                    overrides the method. Dynamic method dispatch is the mechanism by which a call to an overridden
+                    method is resolved at run time, rather than compile time.</p>
             </section>
 
             <section id="abstraction" class="lesson">
                 <h2>Abstraction & Interfaces</h2>
-                
+
+                <h3>Abstraction vs Encapsulation</h3>
+                <div style="margin: 2rem 0; text-align: center;">
+                    <img src="../../assets/abstraction_vs_encapsulation.png" alt="Abstraction vs Encapsulation Table"
+                        style="max-width: 100%; border-radius: 12px; box-shadow: var(--card-shadow); border: var(--glass-border);">
+                </div>
+
                 <h3>Abstract Classes</h3>
-                <p>You can require that certain methods be overridden by subclasses by specifying the <code>abstract</code> type modifier. An abstract class cannot be instantiated, and any subclass must either implement all abstract methods or be declared abstract itself. Abstract classes can have non-abstract methods, final variables, static variables, and constructors.</p>
+                <p>You can require that certain methods be overridden by subclasses by specifying the
+                    <code>abstract</code> type modifier. An abstract class cannot be instantiated, and any subclass must
+                    either implement all abstract methods or be declared abstract itself. Abstract classes can have
+                    non-abstract methods, final variables, static variables, and constructors.</p>
 
                 <h3>Interfaces</h3>
-                <p>Interfaces specify only what the class is doing, not how it is doing it. Variables declared in an interface are implicitly <code>public static final</code>, and methods are <code>public abstract</code> by default (prior to Java 8).</p>
-                <p>From Java 8 onwards, interfaces can contain <code>default</code> and <code>static</code> methods with implementations. The calling code can dispatch through an interface without having to know anything about the callee.</p>
+                <p>Interfaces specify only what the class is doing, not how it is doing it. Variables declared in an
+                    interface are implicitly <code>public static final</code>, and methods are
+                    <code>public abstract</code> by default (prior to Java 8).</p>
+                <p>From Java 8 onwards, interfaces can contain <code>default</code> and <code>static</code> methods with
+                    implementations. The calling code can dispatch through an interface without having to know anything
+                    about the callee.</p>
 
                 <table class="data-types-table">
                     <thead>
@@ -226,13 +268,18 @@ mybox = new Box(); // allocate a Box object</code></pre>
 
             <section id="packages" class="lesson">
                 <h2>Packages</h2>
-                <p>Packages are containers for classes used to keep the class name space compartmentalized. They prevent collisions between classes with the same names. Packages are stored in a hierarchical manner corresponding to file system directories.</p>
+                <p>Packages are containers for classes used to keep the class name space compartmentalized. They prevent
+                    collisions between classes with the same names. Packages are stored in a hierarchical manner
+                    corresponding to file system directories.</p>
             </section>
 
             <section id="static" class="lesson">
                 <h2>The static Keyword</h2>
-                <p>When a member is declared static, it can be accessed before any objects of its class are created, and without reference to any object. A static method belongs to the class, not the instance.</p>
-                <p>A static method can call only other static methods and access static data. It cannot refer to <code>this</code> or <code>super</code> keywords in any way. You cannot override static methods because they are resolved during compile time.</p>
+                <p>When a member is declared static, it can be accessed before any objects of its class are created, and
+                    without reference to any object. A static method belongs to the class, not the instance.</p>
+                <p>A static method can call only other static methods and access static data. It cannot refer to
+                    <code>this</code> or <code>super</code> keywords in any way. You cannot override static methods
+                    because they are resolved during compile time.</p>
                 <div class="code-block">
                     <pre><code>class UseStatic {
     static int a = 3;
@@ -247,8 +294,11 @@ mybox = new Box(); // allocate a Box object</code></pre>
 
             <section id="enums" class="lesson">
                 <h2>Enumerations</h2>
-                <p>An enumeration defines a class type created using the <code>enum</code> keyword. All enums implicitly extend the <code>java.lang.Enum</code> class and cannot extend anything else.</p>
-                <p>Methods like <code>values()</code>, <code>ordinal()</code>, and <code>valueOf()</code> are present inside java.lang.Enum. Enums can contain constructors (executed for each enum constant during class loading), but they must be private or default modifiers.</p>
+                <p>An enumeration defines a class type created using the <code>enum</code> keyword. All enums implicitly
+                    extend the <code>java.lang.Enum</code> class and cannot extend anything else.</p>
+                <p>Methods like <code>values()</code>, <code>ordinal()</code>, and <code>valueOf()</code> are present
+                    inside java.lang.Enum. Enums can contain constructors (executed for each enum constant during class
+                    loading), but they must be private or default modifiers.</p>
             </section>
 
             <div class="next-steps">
@@ -290,20 +340,20 @@ mybox = new Box(); // allocate a Box object</code></pre>
     <script>
         const themeToggle = document.getElementById('themeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        
+
         // Check for saved user preference, if any, on load of the website
-        const currentTheme = localStorage.getItem('theme') || 
+        const currentTheme = localStorage.getItem('theme') ||
             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        
+
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
             updateIcon(currentTheme);
         }
 
-        themeToggle.addEventListener('click', function() {
+        themeToggle.addEventListener('click', function () {
             let theme = document.documentElement.getAttribute('data-theme');
             let targetTheme = theme === 'dark' ? 'light' : 'dark';
-            
+
             document.documentElement.setAttribute('data-theme', targetTheme);
             localStorage.setItem('theme', targetTheme);
             updateIcon(targetTheme);
@@ -318,4 +368,7 @@ mybox = new Box(); // allocate a Box object</code></pre>
         }
     </script>
 </body>
+
 </html>
+
+
