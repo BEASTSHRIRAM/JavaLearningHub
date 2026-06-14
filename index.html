@@ -1,0 +1,427 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Master Java from Basics to AI – A structured learning path covering Java fundamentals, OOP, DSA, Backend Development, and Spring AI."><meta name=author content=BEASTSHRIRAM><link href=https://beastshriram.github.io/JavaLearningHub/ rel=canonical><link href=java-basics/ rel=next><link rel=icon href=assets/favicon.png><meta name=generator content="mkdocs-1.6.1, mkdocs-material-9.7.6"><title>Java Learning Hub - Java Learning Hub</title><link rel=stylesheet href=assets/stylesheets/main.484c7ddc.min.css><link rel=stylesheet href=assets/stylesheets/palette.ab4e12ef.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=stylesheets/extra.css><script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script></head> <body dir=ltr data-md-color-scheme=slate data-md-color-primary=black data-md-color-accent=cyan> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> </div> <div data-md-component=announce> </div> <header class="md-header md-header--shadow md-header--lifted" data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=. title="Java Learning Hub" class="md-header__button md-logo" aria-label="Java Learning Hub" data-md-component=logo> <img src=assets/logo.png alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Java Learning Hub </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Java Learning Hub </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary=black data-md-color-accent=cyan aria-hidden=true type=radio name=__palette id=__palette_0> </form> <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg> </label> <nav class=md-search__options aria-label=Search> <a href=javascript:void(0) class="md-search__icon md-icon" title=Share aria-label=Share data-clipboard data-clipboard-text data-md-component=search-share tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg> </a> <button type=reset class="md-search__icon md-icon" title=Clear aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg> </button> </nav> <div class=md-search__suggest data-md-component=search-suggest></div> </form> <div class=md-search__output> <div class=md-search__scrollwrap tabindex=0 data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list role=presentation></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/BEASTSHRIRAM/JavaLearningHub title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg> </div> <div class=md-source__repository> BEASTSHRIRAM/JavaLearningHub </div> </a> </div> </nav> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class=md-grid> <ul class=md-tabs__list> <li class="md-tabs__item md-tabs__item--active"> <a href=. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=java-basics/ class=md-tabs__link> Java Basics </a> </li> <li class=md-tabs__item> <a href=oops/ class=md-tabs__link> OOP </a> </li> <li class=md-tabs__item> <a href=dsa/ class=md-tabs__link> DSA </a> </li> <li class=md-tabs__item> <a href=cs-fundamentals/ class=md-tabs__link> CS Fundamentals </a> </li> <li class=md-tabs__item> <a href=java-backend/ class=md-tabs__link> Backend </a> </li> <li class=md-tabs__item> <a href=devops/ class=md-tabs__link> DevOps </a> </li> <li class=md-tabs__item> <a href=spring-ai/ class=md-tabs__link> Spring AI </a> </li> <li class=md-tabs__item> <a href=interview-kick/ class=md-tabs__link> InterviewKick </a> </li> <li class=md-tabs__item> <a href=quickstart/ class=md-tabs__link> Quick Start </a> </li> <li class=md-tabs__item> <a href=resources/ class=md-tabs__link> Resources </a> </li> </ul> </div> </nav> </header> <div class=md-container data-md-component=container> <style>
+  .md-header {
+    position: initial;
+  }
+  .md-main__inner {
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+  .md-content {
+    display: none;
+  }
+  @media screen and (min-width: 60em) {
+    .md-sidebar--secondary {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+      display: none;
+    }
+  }
+  .mdx-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Hero section */
+  .mdx-hero {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--md-typeset-color);
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #vanta-bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--md-default-bg-color);
+  }
+
+  .mdx-hero__content {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(30, 30, 30, 0.75);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0, 188, 212, 0.15);
+  }
+
+  [data-md-color-scheme="default"] .mdx-hero__content {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  .animated-title {
+    display: inline-block;
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animated-subtitle {
+    display: inline-block;
+    animation: fadeInUp 1.2s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .mdx-hero h1 {
+    margin-bottom: 1.5rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: -0.5px;
+  }
+
+  .mdx-hero p {
+    margin: 1.5rem 0;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--md-typeset-color);
+  }
+
+  .mdx-hero .md-button {
+    margin: 0.5rem;
+    color: var(--md-accent-fg-color);
+    border: 2px solid var(--md-accent-fg-color);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    animation: fadeInUp 1.2s ease-out 0.6s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+
+  .mdx-hero .md-button--primary {
+    background-color: var(--md-accent-fg-color);
+    color: #000;
+    border-color: var(--md-accent-fg-color);
+  }
+
+  .mdx-hero .md-button:focus,
+  .mdx-hero .md-button:hover {
+    background-color: var(--md-accent-fg-color);
+    color: #000;
+    border-color: var(--md-accent-fg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+  }
+
+  /* Code preview */
+  .hero-code-preview {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem auto 0;
+    max-width: 28rem;
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    border: 1px solid rgba(0, 188, 212, 0.2);
+  }
+
+  .hero-code-preview .kw { color: #ff79c6; }
+  .hero-code-preview .cn { color: #8be9fd; }
+  .hero-code-preview .st { color: #50fa7b; }
+  .hero-code-preview .cm { color: #6272a4; }
+
+  /* Learning paths section */
+  .learning-paths {
+    margin: 5rem auto;
+    max-width: 80%;
+    padding: 0 1rem;
+  }
+
+  .learning-paths-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 800;
+  }
+
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .path-card {
+    padding: 1.8rem;
+    border-radius: 12px;
+    background-color: var(--md-code-bg-color, #1e1e2e);
+    border: 1px solid rgba(0, 188, 212, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .path-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.15);
+    border-color: var(--md-accent-fg-color);
+  }
+
+  .path-icon {
+    margin-bottom: 0.8rem;
+    color: var(--md-accent-fg-color);
+  }
+
+  .path-icon svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: currentColor;
+  }
+
+  .path-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--md-accent-fg-color);
+  }
+
+  .path-description {
+    color: var(--md-typeset-color);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  .path-difficulty {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+  }
+
+  .path-difficulty.beginner { background: rgba(80, 250, 123, 0.15); color: #50fa7b; }
+  .path-difficulty.intermediate { background: rgba(255, 184, 108, 0.15); color: #ffb86c; }
+  .path-difficulty.advanced { background: rgba(255, 85, 85, 0.15); color: #ff5555; }
+
+  .path-link {
+    color: var(--md-accent-fg-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+  }
+
+  .path-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  /* Learning path timeline */
+  .timeline-section {
+    margin: 5rem auto;
+    max-width: 70%;
+    text-align: center;
+  }
+
+  .timeline-title {
+    font-size: 2rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+  }
+
+  .timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .timeline-step {
+    background: var(--md-code-bg-color, #1e1e2e);
+    border: 1px solid rgba(0, 188, 212, 0.15);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    min-width: 120px;
+    transition: transform 0.2s;
+  }
+
+  .timeline-step:hover {
+    transform: scale(1.05);
+    border-color: var(--md-accent-fg-color);
+  }
+
+  .timeline-step-number {
+    background: var(--md-accent-fg-color);
+    color: #000;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-step h4 {
+    margin: 0.3rem 0 0.2rem;
+    font-size: 0.9rem;
+    color: var(--md-typeset-color);
+  }
+
+  .timeline-step p {
+    margin: 0;
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+
+  .timeline-arrow {
+    font-size: 1.2rem;
+    color: var(--md-accent-fg-color);
+    opacity: 0.5;
+  }
+
+  /* Stats section */
+  .stats-section {
+    margin: 4rem auto;
+    max-width: 70%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--md-accent-fg-color);
+    margin: 0;
+    font-weight: 800;
+  }
+
+  .stat-item p {
+    margin: 0.3rem 0 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+
+  /* CTA section */
+  .cta-section {
+    margin: 5rem auto;
+    max-width: 70%;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 16px;
+    background-color: var(--md-code-bg-color, #1e1e2e);
+    border: 1px solid rgba(0, 188, 212, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 700;
+  }
+
+  .cta-description {
+    margin-bottom: 1.5rem;
+    color: var(--md-typeset-color);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    opacity: 0.85;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .mdx-hero {
+      height: auto;
+      min-height: 90vh;
+      padding: 3rem 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mdx-hero__content {
+      padding: 1.5rem 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mdx-hero h1 { font-size: 2rem; margin-bottom: 1rem; }
+    .mdx-hero p { font-size: 1rem; margin-bottom: 1rem; }
+    .path-grid { grid-template-columns: 1fr; }
+    .timeline { flex-direction: column; }
+    .timeline-arrow { transform: rotate(90deg); margin: 0.5rem 0; }
+    .stats-section { gap: 1.5rem; flex-direction: column; align-items: center; }
+    .learning-paths, .timeline-section, .cta-section { max-width: 95%; }
+  }
+
+  @media screen and (max-width: 480px) {
+    .mdx-hero h1 { font-size: 1.6rem; }
+    .hero-code-preview { 
+      font-size: 0.75rem; 
+      padding: 0.8rem; 
+      width: 100%; 
+      box-sizing: border-box; 
+      overflow-x: auto; 
+    }
+    .mdx-hero .md-button {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+      display: block;
+      margin: 0.5rem auto;
+      width: 90%;
+    }
+  }
+</style> <section class=mdx-container> <div class="md-grid md-typeset" style="max-width: 100%; padding: 0"> <div class=mdx-hero> <div id=vanta-bg></div> <div class=mdx-hero__content> <h1><span class=animated-title>Java Learning Hub</span></h1> <p> <span class=animated-subtitle>Master Java from Basics to AI — structured, practical, and real-world focused</span> </p> <div class=hero-code-preview> <span class=kw>public class</span> <span class=cn>LearningHub</span> {<br> &nbsp;&nbsp;&nbsp;&nbsp;<span class=kw>public static void</span> main(String[] args) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class=st>"Welcome to Java!"</span>);<br> &nbsp;&nbsp;&nbsp;&nbsp;}<br> } </div> <div style="margin-top: 1.5rem;"> <a href=java-basics/ class="md-button md-button--primary"> Start Learning </a> <a href=https://github.com/BEASTSHRIRAM/JavaLearningHub class=md-button target=_blank> View on GitHub </a> </div> </div> </div> <!-- Learning Paths --> <div class=learning-paths> <h1 class=learning-paths-title>Learning Modules</h1> <div class=path-grid> <div class=path-card> <div class=path-icon><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M16.5 6.08s-6.84 1.71-3.56 5.48c.97 1.11-.25 2.11-.25 2.11s2.45-1.25 1.31-2.85c-1.06-1.47-1.86-2.2 2.5-4.74m-4.47 1.2C16.08 4.08 14 2 14 2c.84 3.3-2.96 4.3-4.33 6.36-.94 1.4.46 2.91 2.33 4.64-.71-1.7-3.22-3.16.03-5.72M9.37 17.47c-3.08.86 1.88 2.63 5.79.96-.38-.15-.75-.33-1.1-.54-1.36.31-2.76.37-4.14.18-1.31-.16-.55-.6-.55-.6m5.32-1.68c-1.75.38-3.56.47-5.34.26-1.31-.13-.45-.77-.45-.77-3.4 1.13 1.88 2.4 6.6 1.02-.29-.11-.57-.3-.81-.51m3.42 3.3s.57.47-.61.83c-2.28.68-9.43.89-11.41.03-.71-.31.63-.74 1.05-.83.23-.06.46-.08.69-.08-.79-.54-5.13 1.1-2.19 1.56 7.97 1.3 14.54-.6 12.47-1.51m-2.74-4.86c.29-.19.6-.35.92-.49 0 0-1.51.26-3.02.4-1.6.16-3.21.18-4.81.06-2.35-.31 1.29-1.2 1.29-1.2-1.1 0-2.18.26-3.16.75-2.05 1 5.1 1.45 8.78.48m.9 2.42c-.02.04-.04.07-.08.1 5.01-1.31 3.17-4.64.77-3.81-.13.06-.24.14-.31.25.14-.05.28-.09.43-.12 1.2-.24 2.92 1.63-.81 3.58m.13 4.61c-3.01.52-6.09.56-9.12.14 0 0 .46.38 2.81.53 3.6.23 9.13-.13 9.26-1.83.03.01-.23.65-2.95 1.16"/></svg></div> <h3 class=path-title>Java Basics</h3> <span class="path-difficulty beginner">Beginner</span> <p class=path-description> Start your Java journey with fundamentals — variables, data types, control flow, methods, arrays, and exception handling. </p> <a href=java-basics/ class=path-link>Explore →</a> </div> <div class=path-card> <div class=path-icon><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M11 13.5v8H3v-8zM12 2l5.5 9h-11zm5.5 11c2.5 0 4.5 2 4.5 4.5S20 22 17.5 22 13 20 13 17.5s2-4.5 4.5-4.5"/></svg></div> <h3 class=path-title>Object-Oriented Programming</h3> <span class="path-difficulty intermediate">Intermediate</span> <p class=path-description> Master OOP design — classes, inheritance, polymorphism, encapsulation, abstraction, interfaces, and enums. </p> <a href=oops/ class=path-link>Explore →</a> </div> <div class=path-card> <div class=path-icon><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19.5 17c-.13 0-.26 0-.39.04l-1.61-3.25a2.5 2.5 0 0 0-1.75-4.29c-.13 0-.25 0-.39.04l-1.63-3.25c.48-.45.77-1.08.77-1.79a2.5 2.5 0 0 0-5 0c0 .71.29 1.34.76 1.79L8.64 9.54c-.14-.04-.26-.04-.39-.04a2.5 2.5 0 0 0-1.75 4.29l-1.61 3.25C4.76 17 4.63 17 4.5 17a2.5 2.5 0 0 0 0 5A2.5 2.5 0 0 0 7 19.5c0-.7-.29-1.34-.76-1.79l1.62-3.25c.14.04.26.04.39.04s.25 0 .39-.04l1.63 3.25c-.47.45-.77 1.09-.77 1.79a2.5 2.5 0 0 0 5 0A2.5 2.5 0 0 0 12 17c-.13 0-.26 0-.39.04L10 13.79c.46-.45.75-1.08.75-1.79s-.29-1.34-.75-1.79l1.61-3.25c.13.04.26.04.39.04s.26 0 .39-.04L14 10.21c-.45.45-.75 1.09-.75 1.79a2.5 2.5 0 0 0 2.5 2.5c.13 0 .25 0 .39-.04l1.63 3.25c-.47.45-.77 1.09-.77 1.79a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0-2.5-2.5"/></svg></div> <h3 class=path-title>Data Structures & Algorithms</h3> <span class="path-difficulty intermediate">Intermediate – Advanced</span> <p class=path-description> Ace coding interviews — arrays, linked lists, trees, graphs, sorting, DP, and LeetCode practice problems. </p> <a href=dsa/ class=path-link>Explore →</a> </div> <div class=path-card> <div class=path-icon><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m0 8h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1M9 5h1V3H9zm0 8h1v-2H9zm0 8h1v-2H9zM5 3v2h2V3zm0 8v2h2v-2zm0 8v2h2v-2z"/></svg></div> <h3 class=path-title>Java Backend Development</h3> <span class="path-difficulty advanced">Advanced</span> <p class=path-description> Build production-ready REST APIs with Spring Boot, JPA, security, testing, and Docker deployment. </p> <a href=java-backend/ class=path-link>Explore →</a> </div> <div class=path-card> <div class=path-icon><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17.5 15.5c0 1.11-.89 2-2 2s-2-.89-2-2 .9-2 2-2 2 .9 2 2m-9-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.89 2-2-.89-2-2-2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2z"/></svg></div> <h3 class=path-title>Spring AI & Agentic Systems</h3> <span class="path-difficulty advanced">Advanced</span> <p class=path-description> The future — AI-powered Java applications with Spring AI, LangChain4j, RAG systems, and multi-agent architectures. </p> <a href=spring-ai/ class=path-link>Explore →</a> </div> <div class=path-card> <div class=path-icon><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M17 17H7V7h10m4 4V9h-2V7a2 2 0 0 0-2-2h-2V3h-2v2h-2V3H9v2H7c-1.11 0-2 .89-2 2v2H3v2h2v2H3v2h2v2a2 2 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2 2 0 0 0 2-2v-2h2v-2h-2v-2m-6 2h-2v-2h2m2-2H9v6h6z"/></svg></div> <h3 class=path-title>CS Fundamentals</h3> <span class="path-difficulty intermediate">Intermediate</span> <p class=path-description> Core theory every developer needs — Operating Systems, Computer Networks, DBMS — with Java integration. </p> <a href=cs-fundamentals/ class=path-link>Explore →</a> </div> <div class=path-card> <div class=path-icon><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M21.86 12.5A4.31 4.31 0 0 0 19 11c0-1.95-.68-3.6-2.04-4.96S13.95 4 12 4c-1.58 0-3 .47-4.25 1.43s-2.08 2.19-2.5 3.72c-1.25.28-2.29.93-3.08 1.95S1 13.28 1 14.58c0 1.51.54 2.8 1.61 3.85C3.69 19.5 5 20 6.5 20h12c1.25 0 2.31-.44 3.19-1.31.87-.88 1.31-1.94 1.31-3.19q0-1.725-1.14-3M10.5 10H9v1c0 1.11-.89 2-2 2a2 2 0 0 1 2 2v1h1.5v2H9a2 2 0 0 1-2-2v-1c0-.55-.45-1-1-1h-.5v-2H6c.55 0 1-.45 1-1v-1c0-1.1.9-2 2-2h1.5zm8 4H18c-.55 0-1 .45-1 1v1c0 1.11-.89 2-2 2h-1.5v-2H15v-1c0-1.1.9-2 2-2a2 2 0 0 1-2-2v-1h-1.5V8H15a2 2 0 0 1 2 2v1c0 .55.45 1 1 1h.5z"/></svg></div> <h3 class=path-title>DevOps</h3> <span class="path-difficulty intermediate">Intermediate</span> <p class=path-description> Linux, YAML configs, Docker, CI/CD, Kubernetes basics, and monitoring — integrated with Java apps. </p> <a href=devops/ class=path-link>Explore →</a> </div> <div class=path-card> <div class=path-icon><svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 3c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4m4 10.54c0 1.06-.28 3.53-2.19 6.29L13 15l.94-1.88c-.62-.07-1.27-.12-1.94-.12s-1.32.05-1.94.12L11 15l-.81 4.83C8.28 17.07 8 14.6 8 13.54c-2.39.7-4 1.96-4 3.46v4h16v-4c0-1.5-1.6-2.76-4-3.46"/></svg></div> <h3 class=path-title>InterviewKick</h3> <span class="path-difficulty advanced">All Levels</span> <p class=path-description> Curated interview Q&A from big tech — Java, DSA patterns, System Design, Spring Boot, DBMS, and behavioral. </p> <a href=interview-kick/ class=path-link>Explore →</a> </div> </div> </div> <!-- Recommended Learning Path --> <div class=timeline-section> <h2 class=timeline-title>Recommended Learning Path</h2> <div class=timeline> <div class=timeline-step> <div class=timeline-step-number>1</div> <h4>Java Basics</h4> <p>2-3 weeks</p> </div> <span class=timeline-arrow>→</span> <div class=timeline-step> <div class=timeline-step-number>2</div> <h4>OOP Concepts</h4> <p>3-4 weeks</p> </div> <span class=timeline-arrow>→</span> <div class=timeline-step> <div class=timeline-step-number>3</div> <h4>DSA Practice</h4> <p>Ongoing</p> </div> <span class=timeline-arrow>→</span> <div class=timeline-step> <div class=timeline-step-number>4</div> <h4>Backend Dev</h4> <p>4-6 weeks</p> </div> <span class=timeline-arrow>→</span> <div class=timeline-step> <div class=timeline-step-number>5</div> <h4>AI & Agents</h4> <p>2-4 weeks</p> </div> </div> </div> <!-- Stats --> <div class=stats-section> <div class=stat-item> <h3>9</h3> <p>Learning Modules</p> </div> <div class=stat-item> <h3>100+</h3> <p>Topics Covered</p> </div> <div class=stat-item> <h3>200+</h3> <p>Code Examples</p> </div> <div class=stat-item> <h3>100%</h3> <p>Open Source</p> </div> </div> <!-- CTA --> <div class=cta-section> <h2 class=cta-title>Ready to Start Your Java Journey?</h2> <p class=cta-description> Pick a module above and begin learning today. No prerequisites needed — just curiosity! </p> <a href=java-basics/ class="md-button md-button--primary"> Start with Java Basics </a> <a href=https://github.com/BEASTSHRIRAM/JavaLearningHub class=md-button target=_blank> Contribute on GitHub </a> </div> </div> </section> <!-- Vanta.js Networks Effect --> <script src=https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js></script> <script src=https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js></script> <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x00bcd4,
+      backgroundColor: 0x1a1a2e,
+      points: 15,
+      maxDistance: 22.0,
+      spacing: 14.0,
+    });
+  });
+</script> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=. title="Java Learning Hub" class="md-nav__button md-logo" aria-label="Java Learning Hub" data-md-component=logo> <img src=assets/logo.png alt=logo> </a> Java Learning Hub </label> <div class=md-nav__source> <a href=https://github.com/BEASTSHRIRAM/JavaLearningHub title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><!-- Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg> </div> <div class=md-source__repository> BEASTSHRIRAM/JavaLearningHub </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" type=checkbox id=__toc> <a href=. class="md-nav__link md-nav__link--active"> <span class=md-ellipsis> Home </span> </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_2> <div class="md-nav__link md-nav__container"> <a href=java-basics/ class="md-nav__link "> <span class=md-ellipsis> Java Basics </span> </a> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_2_label aria-expanded=false> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> Java Basics </label> <ul class=md-nav__list data-md-scrollfix> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_3> <div class="md-nav__link md-nav__container"> <a href=oops/ class="md-nav__link "> <span class=md-ellipsis> OOP </span> </a> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_3_label aria-expanded=false> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> OOP </label> <ul class=md-nav__list data-md-scrollfix> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_4> <div class="md-nav__link md-nav__container"> <a href=dsa/ class="md-nav__link "> <span class=md-ellipsis> DSA </span> </a> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_4_label aria-expanded=false> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> DSA </label> <ul class=md-nav__list data-md-scrollfix> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_5> <div class="md-nav__link md-nav__container"> <a href=cs-fundamentals/ class="md-nav__link "> <span class=md-ellipsis> CS Fundamentals </span> </a> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_5_label aria-expanded=false> <label class=md-nav__title for=__nav_5> <span class="md-nav__icon md-icon"></span> CS Fundamentals </label> <ul class=md-nav__list data-md-scrollfix> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_6> <div class="md-nav__link md-nav__container"> <a href=java-backend/ class="md-nav__link "> <span class=md-ellipsis> Backend </span> </a> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_6_label aria-expanded=false> <label class=md-nav__title for=__nav_6> <span class="md-nav__icon md-icon"></span> Backend </label> <ul class=md-nav__list data-md-scrollfix> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_7> <div class="md-nav__link md-nav__container"> <a href=devops/ class="md-nav__link "> <span class=md-ellipsis> DevOps </span> </a> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_7_label aria-expanded=false> <label class=md-nav__title for=__nav_7> <span class="md-nav__icon md-icon"></span> DevOps </label> <ul class=md-nav__list data-md-scrollfix> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_8> <div class="md-nav__link md-nav__container"> <a href=spring-ai/ class="md-nav__link "> <span class=md-ellipsis> Spring AI </span> </a> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_8_label aria-expanded=false> <label class=md-nav__title for=__nav_8> <span class="md-nav__icon md-icon"></span> Spring AI </label> <ul class=md-nav__list data-md-scrollfix> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type=checkbox id=__nav_9> <div class="md-nav__link md-nav__container"> <a href=interview-kick/ class="md-nav__link "> <span class=md-ellipsis> InterviewKick </span> </a> </div> <nav class=md-nav data-md-level=1 aria-labelledby=__nav_9_label aria-expanded=false> <label class=md-nav__title for=__nav_9> <span class="md-nav__icon md-icon"></span> InterviewKick </label> <ul class=md-nav__list data-md-scrollfix> </ul> </nav> </li> <li class=md-nav__item> <a href=quickstart/ class=md-nav__link> <span class=md-ellipsis> Quick Start </span> </a> </li> <li class=md-nav__item> <a href=resources/ class=md-nav__link> <span class=md-ellipsis> Resources </span> </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> </article> </div> <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script> <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script> </div> <button type=button class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg> Back to top </button> </main> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <div class=md-progress data-md-component=progress role=progressbar></div> <script id=__config type=application/json>{"annotate": null, "base": ".", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.expand", "navigation.footer", "navigation.indexes", "navigation.instant.progress", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script> <script src=assets/javascripts/bundle.79ae519e.min.js></script> </body> </html>

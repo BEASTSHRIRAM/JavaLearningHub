@@ -1,0 +1,635 @@
+{#- Custom home page template for Java Learning Hub -#}
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<style>
+  .md-header {
+    position: initial;
+  }
+  .md-main__inner {
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+  }
+  .md-content {
+    display: none;
+  }
+  @media screen and (min-width: 60em) {
+    .md-sidebar--secondary {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+      display: none;
+    }
+  }
+  .mdx-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Hero section */
+  .mdx-hero {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: var(--md-typeset-color);
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #vanta-bg {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--md-default-bg-color);
+  }
+
+  .mdx-hero__content {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(30, 30, 30, 0.75);
+    border-radius: 16px;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0, 188, 212, 0.15);
+  }
+
+  [data-md-color-scheme="default"] .mdx-hero__content {
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  .animated-title {
+    display: inline-block;
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animated-subtitle {
+    display: inline-block;
+    animation: fadeInUp 1.2s ease-out 0.3s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .mdx-hero h1 {
+    margin-bottom: 1.5rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: -0.5px;
+  }
+
+  .mdx-hero p {
+    margin: 1.5rem 0;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--md-typeset-color);
+  }
+
+  .mdx-hero .md-button {
+    margin: 0.5rem;
+    color: var(--md-accent-fg-color);
+    border: 2px solid var(--md-accent-fg-color);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    animation: fadeInUp 1.2s ease-out 0.6s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+  }
+
+  .mdx-hero .md-button--primary {
+    background-color: var(--md-accent-fg-color);
+    color: #000;
+    border-color: var(--md-accent-fg-color);
+  }
+
+  .mdx-hero .md-button:focus,
+  .mdx-hero .md-button:hover {
+    background-color: var(--md-accent-fg-color);
+    color: #000;
+    border-color: var(--md-accent-fg-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+  }
+
+  /* Code preview */
+  .hero-code-preview {
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 1.5rem auto 0;
+    max-width: 28rem;
+    text-align: left;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    border: 1px solid rgba(0, 188, 212, 0.2);
+  }
+
+  .hero-code-preview .kw { color: #ff79c6; }
+  .hero-code-preview .cn { color: #8be9fd; }
+  .hero-code-preview .st { color: #50fa7b; }
+  .hero-code-preview .cm { color: #6272a4; }
+
+  /* Learning paths section */
+  .learning-paths {
+    margin: 5rem auto;
+    max-width: 80%;
+    padding: 0 1rem;
+  }
+
+  .learning-paths-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 800;
+  }
+
+  .path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .path-card {
+    padding: 1.8rem;
+    border-radius: 12px;
+    background-color: var(--md-code-bg-color, #1e1e2e);
+    border: 1px solid rgba(0, 188, 212, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .path-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 188, 212, 0.15);
+    border-color: var(--md-accent-fg-color);
+  }
+
+  .path-icon {
+    margin-bottom: 0.8rem;
+    color: var(--md-accent-fg-color);
+  }
+
+  .path-icon svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: currentColor;
+  }
+
+  .path-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: var(--md-accent-fg-color);
+  }
+
+  .path-description {
+    color: var(--md-typeset-color);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+
+  .path-difficulty {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+  }
+
+  .path-difficulty.beginner { background: rgba(80, 250, 123, 0.15); color: #50fa7b; }
+  .path-difficulty.intermediate { background: rgba(255, 184, 108, 0.15); color: #ffb86c; }
+  .path-difficulty.advanced { background: rgba(255, 85, 85, 0.15); color: #ff5555; }
+
+  .path-link {
+    color: var(--md-accent-fg-color);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+  }
+
+  .path-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  /* Learning path timeline */
+  .timeline-section {
+    margin: 5rem auto;
+    max-width: 70%;
+    text-align: center;
+  }
+
+  .timeline-title {
+    font-size: 2rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+  }
+
+  .timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .timeline-step {
+    background: var(--md-code-bg-color, #1e1e2e);
+    border: 1px solid rgba(0, 188, 212, 0.15);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    min-width: 120px;
+    transition: transform 0.2s;
+  }
+
+  .timeline-step:hover {
+    transform: scale(1.05);
+    border-color: var(--md-accent-fg-color);
+  }
+
+  .timeline-step-number {
+    background: var(--md-accent-fg-color);
+    color: #000;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-step h4 {
+    margin: 0.3rem 0 0.2rem;
+    font-size: 0.9rem;
+    color: var(--md-typeset-color);
+  }
+
+  .timeline-step p {
+    margin: 0;
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+
+  .timeline-arrow {
+    font-size: 1.2rem;
+    color: var(--md-accent-fg-color);
+    opacity: 0.5;
+  }
+
+  /* Stats section */
+  .stats-section {
+    margin: 4rem auto;
+    max-width: 70%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--md-accent-fg-color);
+    margin: 0;
+    font-weight: 800;
+  }
+
+  .stat-item p {
+    margin: 0.3rem 0 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
+  }
+
+  /* CTA section */
+  .cta-section {
+    margin: 5rem auto;
+    max-width: 70%;
+    padding: 3rem;
+    text-align: center;
+    border-radius: 16px;
+    background-color: var(--md-code-bg-color, #1e1e2e);
+    border: 1px solid rgba(0, 188, 212, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .cta-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--md-accent-fg-color);
+    font-weight: 700;
+  }
+
+  .cta-description {
+    margin-bottom: 1.5rem;
+    color: var(--md-typeset-color);
+    line-height: 1.6;
+    font-size: 1.05rem;
+    opacity: 0.85;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 768px) {
+    .mdx-hero {
+      height: auto;
+      min-height: 90vh;
+      padding: 3rem 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mdx-hero__content {
+      padding: 1.5rem 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mdx-hero h1 { font-size: 2rem; margin-bottom: 1rem; }
+    .mdx-hero p { font-size: 1rem; margin-bottom: 1rem; }
+    .path-grid { grid-template-columns: 1fr; }
+    .timeline { flex-direction: column; }
+    .timeline-arrow { transform: rotate(90deg); margin: 0.5rem 0; }
+    .stats-section { gap: 1.5rem; flex-direction: column; align-items: center; }
+    .learning-paths, .timeline-section, .cta-section { max-width: 95%; }
+  }
+
+  @media screen and (max-width: 480px) {
+    .mdx-hero h1 { font-size: 1.6rem; }
+    .hero-code-preview { 
+      font-size: 0.75rem; 
+      padding: 0.8rem; 
+      width: 100%; 
+      box-sizing: border-box; 
+      overflow-x: auto; 
+    }
+    .mdx-hero .md-button {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+      display: block;
+      margin: 0.5rem auto;
+      width: 90%;
+    }
+  }
+</style>
+
+<section class="mdx-container">
+  <div class="md-grid md-typeset" style="max-width: 100%; padding: 0">
+    <div class="mdx-hero">
+      <div id="vanta-bg"></div>
+
+      <div class="mdx-hero__content">
+        <h1><span class="animated-title">Java Learning Hub</span></h1>
+        <p>
+          <span class="animated-subtitle">Master Java from Basics to AI — structured, practical, and real-world focused</span>
+        </p>
+
+        <div class="hero-code-preview">
+          <span class="kw">public class</span> <span class="cn">LearningHub</span> {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">public static void</span> main(String[] args) {<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="st">"Welcome to Java!"</span>);<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+          }
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <a href="{{ 'java-basics/' | url }}" class="md-button md-button--primary">
+            Start Learning
+          </a>
+          <a href="{{ config.repo_url }}" class="md-button" target="_blank">
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Learning Paths -->
+    <div class="learning-paths">
+      <h1 class="learning-paths-title">Learning Modules</h1>
+      <div class="path-grid">
+        <div class="path-card">
+          <div class="path-icon">{% include ".icons/material/language-java.svg" %}</div>
+          <h3 class="path-title">Java Basics</h3>
+          <span class="path-difficulty beginner">Beginner</span>
+          <p class="path-description">
+            Start your Java journey with fundamentals — variables, data types,
+            control flow, methods, arrays, and exception handling.
+          </p>
+          <a href="{{ 'java-basics/' | url }}" class="path-link">Explore →</a>
+        </div>
+
+        <div class="path-card">
+          <div class="path-icon">{% include ".icons/material/shape.svg" %}</div>
+          <h3 class="path-title">Object-Oriented Programming</h3>
+          <span class="path-difficulty intermediate">Intermediate</span>
+          <p class="path-description">
+            Master OOP design — classes, inheritance, polymorphism,
+            encapsulation, abstraction, interfaces, and enums.
+          </p>
+          <a href="{{ 'oops/' | url }}" class="path-link">Explore →</a>
+        </div>
+
+        <div class="path-card">
+          <div class="path-icon">{% include ".icons/material/graph.svg" %}</div>
+          <h3 class="path-title">Data Structures & Algorithms</h3>
+          <span class="path-difficulty intermediate">Intermediate – Advanced</span>
+          <p class="path-description">
+            Ace coding interviews — arrays, linked lists, trees, graphs,
+            sorting, DP, and LeetCode practice problems.
+          </p>
+          <a href="{{ 'dsa/' | url }}" class="path-link">Explore →</a>
+        </div>
+
+        <div class="path-card">
+          <div class="path-icon">{% include ".icons/material/server.svg" %}</div>
+          <h3 class="path-title">Java Backend Development</h3>
+          <span class="path-difficulty advanced">Advanced</span>
+          <p class="path-description">
+            Build production-ready REST APIs with Spring Boot, JPA,
+            security, testing, and Docker deployment.
+          </p>
+          <a href="{{ 'java-backend/' | url }}" class="path-link">Explore →</a>
+        </div>
+
+        <div class="path-card">
+          <div class="path-icon">{% include ".icons/material/robot-outline.svg" %}</div>
+          <h3 class="path-title">Spring AI & Agentic Systems</h3>
+          <span class="path-difficulty advanced">Advanced</span>
+          <p class="path-description">
+            The future — AI-powered Java applications with Spring AI,
+            LangChain4j, RAG systems, and multi-agent architectures.
+          </p>
+          <a href="{{ 'spring-ai/' | url }}" class="path-link">Explore →</a>
+        </div>
+
+        <div class="path-card">
+          <div class="path-icon">{% include ".icons/material/memory.svg" %}</div>
+          <h3 class="path-title">CS Fundamentals</h3>
+          <span class="path-difficulty intermediate">Intermediate</span>
+          <p class="path-description">
+            Core theory every developer needs — Operating Systems,
+            Computer Networks, DBMS — with Java integration.
+          </p>
+          <a href="{{ 'cs-fundamentals/' | url }}" class="path-link">Explore →</a>
+        </div>
+
+        <div class="path-card">
+          <div class="path-icon">{% include ".icons/material/cloud-braces.svg" %}</div>
+          <h3 class="path-title">DevOps</h3>
+          <span class="path-difficulty intermediate">Intermediate</span>
+          <p class="path-description">
+            Linux, YAML configs, Docker, CI/CD, Kubernetes basics,
+            and monitoring — integrated with Java apps.
+          </p>
+          <a href="{{ 'devops/' | url }}" class="path-link">Explore →</a>
+        </div>
+
+        <div class="path-card">
+          <div class="path-icon">{% include ".icons/material/account-tie.svg" %}</div>
+          <h3 class="path-title">InterviewKick</h3>
+          <span class="path-difficulty advanced">All Levels</span>
+          <p class="path-description">
+            Curated interview Q&A from big tech — Java, DSA patterns,
+            System Design, Spring Boot, DBMS, and behavioral.
+          </p>
+          <a href="{{ 'interview-kick/' | url }}" class="path-link">Explore →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended Learning Path -->
+    <div class="timeline-section">
+      <h2 class="timeline-title">Recommended Learning Path</h2>
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="timeline-step-number">1</div>
+          <h4>Java Basics</h4>
+          <p>2-3 weeks</p>
+        </div>
+        <span class="timeline-arrow">→</span>
+        <div class="timeline-step">
+          <div class="timeline-step-number">2</div>
+          <h4>OOP Concepts</h4>
+          <p>3-4 weeks</p>
+        </div>
+        <span class="timeline-arrow">→</span>
+        <div class="timeline-step">
+          <div class="timeline-step-number">3</div>
+          <h4>DSA Practice</h4>
+          <p>Ongoing</p>
+        </div>
+        <span class="timeline-arrow">→</span>
+        <div class="timeline-step">
+          <div class="timeline-step-number">4</div>
+          <h4>Backend Dev</h4>
+          <p>4-6 weeks</p>
+        </div>
+        <span class="timeline-arrow">→</span>
+        <div class="timeline-step">
+          <div class="timeline-step-number">5</div>
+          <h4>AI & Agents</h4>
+          <p>2-4 weeks</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-section">
+      <div class="stat-item">
+        <h3>9</h3>
+        <p>Learning Modules</p>
+      </div>
+      <div class="stat-item">
+        <h3>100+</h3>
+        <p>Topics Covered</p>
+      </div>
+      <div class="stat-item">
+        <h3>200+</h3>
+        <p>Code Examples</p>
+      </div>
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Open Source</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <h2 class="cta-title">Ready to Start Your Java Journey?</h2>
+      <p class="cta-description">
+        Pick a module above and begin learning today. No prerequisites needed — just curiosity!
+      </p>
+      <a href="{{ 'java-basics/' | url }}" class="md-button md-button--primary">
+        Start with Java Basics
+      </a>
+      <a href="{{ config.repo_url }}" class="md-button" target="_blank">
+        Contribute on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Vanta.js Networks Effect -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x00bcd4,
+      backgroundColor: 0x1a1a2e,
+      points: 15,
+      maxDistance: 22.0,
+      spacing: 14.0,
+    });
+  });
+</script>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}

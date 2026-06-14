@@ -1,0 +1,103 @@
+/* ============================================
+   Java Learning Hub – Custom MkDocs Material Styles
+   ============================================ */
+
+/* --- Root color tokens --- */
+:root {
+  --jlh-accent: #00bcd4;
+  --jlh-accent-light: rgba(0, 188, 212, 0.12);
+  --jlh-card-border: rgba(0, 188, 212, 0.15);
+  --jlh-card-bg: var(--md-code-bg-color, #1e1e2e);
+}
+
+/* --- Admonition tweaks for practice cards --- */
+.md-typeset .admonition.practice,
+.md-typeset details.practice {
+  border-left-color: var(--jlh-accent);
+}
+
+.md-typeset .practice > .admonition-title,
+.md-typeset .practice > summary {
+  background-color: var(--jlh-accent-light);
+}
+
+/* --- Data table styling --- */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--jlh-card-border);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.82rem;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--jlh-accent-light);
+  color: var(--md-typeset-color);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  padding: 0.65rem 0.9rem;
+  border-color: var(--jlh-card-border);
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: var(--jlh-accent-light);
+}
+
+/* --- Code block enhancements --- */
+.md-typeset .highlight pre {
+  border-radius: 8px;
+  border: 1px solid var(--jlh-card-border);
+}
+
+/* --- Smooth scroll --- */
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Custom badges --- */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}
+
+.badge-beginner {
+  background: rgba(80, 250, 123, 0.15);
+  color: #50fa7b;
+}
+
+.badge-intermediate {
+  background: rgba(255, 184, 108, 0.15);
+  color: #ffb86c;
+}
+
+.badge-advanced {
+  background: rgba(255, 85, 85, 0.15);
+  color: #ff5555;
+}
+
+/* --- Navigation tab accent --- */
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: var(--jlh-accent) !important;
+}
+
+/* --- Header link hover --- */
+.md-header__topic {
+  font-weight: 700;
+}
+
+/* --- Footer social icons --- */
+.md-social__link svg {
+  fill: currentcolor;
+}
