@@ -11,7 +11,7 @@ repo_name: BEASTSHRIRAM/JavaLearningHub
 repo_url: https://github.com/BEASTSHRIRAM/JavaLearningHub
 
 # Copyright
-copyright: Copyright &copy; 2026 Java Learning Hub
+copyright: Copyright &copy; 2026 Java Learning Hub. Made by Sriam K.
 
 # Configuration
 theme:
@@ -40,6 +40,7 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
+    - toc.integrate
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
@@ -105,22 +106,14 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  - Java Basics:
-      - java-basics/index.md
-  - OOP:
-      - oops/index.md
-  - DSA:
-      - dsa/index.md
-  - CS Fundamentals:
-      - cs-fundamentals/index.md
-  - Backend:
-      - java-backend/index.md
-  - DevOps:
-      - devops/index.md
-  - Spring AI:
-      - spring-ai/index.md
-  - InterviewKick:
-      - interview-kick/index.md
+  - Java Basics: java-basics/index.md
+  - OOP: oops/index.md
+  - DSA: dsa/index.md
+  - CS Fundamentals: cs-fundamentals/index.md
+  - Backend: java-backend/index.md
+  - DevOps: devops/index.md
+  - Spring AI: spring-ai/index.md
+  - InterviewKick: interview-kick/index.md
   - Quick Start: quickstart.md
   - Resources: resources.md
 
