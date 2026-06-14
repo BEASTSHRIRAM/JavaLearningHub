@@ -271,67 +271,157 @@ calc.greet();                            // Hello!
 
 ---
 
-## Arrays & Collections
+## Java Collections Framework
 
-### Arrays
+The Java Collections Framework provides an architecture to store and manipulate a group of objects. It includes interfaces, implementations (classes), and algorithms.
 
+### 1. Lists (Ordered, allows duplicates)
+
+**ArrayList**: Resizable array. Fast for random access, slow for insertions/deletions in the middle.
 ```java
-// Single-dimensional array
-int[] numbers = new int[5];
-int[] primes = {2, 3, 5, 7, 11};
+List<String> names = new ArrayList<>();
+names.add("Alice");
+names.add("Bob");
+names.set(1, "Charlie"); // Updates element at index 1
+System.out.println(names.get(0)); // Alice
+```
 
-// Access elements
-System.out.println(primes[0]);  // 2
-primes[0] = 1;                  // Modify element
+**LinkedList**: Doubly-linked list. Fast for insertions/deletions, slow for random access.
+```java
+LinkedList<String> queue = new LinkedList<>();
+queue.addFirst("First");
+queue.addLast("Last");
+```
 
-// Multi-dimensional array
-int[][] matrix = new int[3][3];
-int[][] grid = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+### 2. Sets (Unordered, no duplicates)
 
-// Array iteration
-for (int num : primes) {
-    System.out.println(num);
+**HashSet**: Backed by a Hash Table. O(1) constant time for basic operations. No ordering guarantees.
+```java
+Set<Integer> uniqueNumbers = new HashSet<>();
+uniqueNumbers.add(10);
+uniqueNumbers.add(10); // Ignored, duplicate
+```
+
+**TreeSet**: Backed by a Red-Black Tree. Elements are sorted in natural order. O(log n) time.
+```java
+Set<Integer> sortedNumbers = new TreeSet<>();
+sortedNumbers.add(5);
+sortedNumbers.add(1); // Internally sorted: [1, 5]
+```
+
+### 3. Maps (Key-Value pairs)
+
+**HashMap**: Unordered key-value pairs. O(1) lookups.
+```java
+Map<String, Integer> ages = new HashMap<>();
+ages.put("Alice", 25);
+ages.put("Bob", 30);
+System.out.println(ages.get("Alice")); // 25
+```
+
+**TreeMap**: Sorted by keys. O(log n) lookups.
+
+---
+
+## Multithreading & Concurrency
+
+Java has built-in support for multithreading, allowing multiple parts of a program to run concurrently to maximize CPU utilization.
+
+### 1. Creating Threads
+
+**Method 1: Implementing Runnable (Recommended)**
+```java
+class MyTask implements Runnable {
+    public void run() {
+        System.out.println("Task is running on: " + Thread.currentThread().getName());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyTask());
+        t1.start(); // Starts the new thread
+    }
 }
 ```
 
-### ArrayList (Collection)
-
+**Method 2: Extending Thread Class**
 ```java
-import java.util.ArrayList;
-
-ArrayList<String> fruits = new ArrayList<>();
-fruits.add("Apple");
-fruits.add("Banana");
-fruits.add("Orange");
-
-System.out.println(fruits.get(0));      // Apple
-System.out.println(fruits.size());      // 3
-
-fruits.remove(1);                        // Remove Banana
-fruits.set(0, "Mango");                  // Replace Apple
-
-for (String fruit : fruits) {
-    System.out.println(fruit);
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread running");
+    }
 }
 ```
 
-### HashMap (Key-Value Pairs)
+### 2. Thread Synchronization
+When multiple threads access shared resources, data corruption can occur. We use the `synchronized` keyword to lock the resource so only one thread can access it at a time.
 
 ```java
-import java.util.HashMap;
-
-HashMap<String, Integer> map = new HashMap<>();
-map.put("Alice", 25);
-map.put("Bob", 30);
-map.put("Charlie", 22);
-
-System.out.println(map.get("Alice"));    // 25
-System.out.println(map.containsKey("Bob")); // true
-map.remove("Charlie");
-
-for (String key : map.keySet()) {
-    System.out.println(key + " -> " + map.get(key));
+class Counter {
+    private int count = 0;
+    
+    // Only one thread can execute this at a time
+    public synchronized void increment() {
+        count++;
+    }
 }
+```
+
+### 3. Executor Service (Modern Concurrency)
+Instead of manually managing raw threads, modern Java applications use Thread Pools.
+
+```java
+ExecutorService executor = Executors.newFixedThreadPool(2);
+executor.submit(() -> System.out.println("Task 1"));
+executor.submit(() -> System.out.println("Task 2"));
+executor.shutdown();
+```
+
+---
+
+## Modern Java: Lambdas & Stream API
+
+Introduced in Java 8, Lambdas and Streams revolutionized how we process collections, enabling functional, declarative-style programming.
+
+### 1. Lambda Expressions
+A concise way to represent anonymous functions.
+
+```java
+// Traditional way
+Runnable r1 = new Runnable() {
+    public void run() { System.out.println("Running"); }
+};
+
+// Lambda way
+Runnable r2 = () -> System.out.println("Running");
+```
+
+### 2. Stream API
+Streams allow declarative processing of collections (filtering, mapping, reducing) without mutating the original collection.
+
+```java
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+
+// Filter names starting with 'C' or 'D', convert to uppercase, and print
+names.stream()
+     .filter(name -> name.startsWith("C") || name.startsWith("D"))
+     .map(String::toUpperCase)
+     .forEach(System.out::println);
+// Output: CHARLIE
+// Output: DAVID
+```
+
+**Common Stream Operations:**
+
+- `filter(Predicate)`: Keeps elements that match a condition.
+- `map(Function)`: Transforms elements.
+- `collect(Collectors.toList())`: Gathers the stream back into a collection.
+- `reduce(BinaryOperator)`: Combines elements into a single result.
+
+```java
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sum = numbers.stream().reduce(0, (a, b) -> a + b); // sum = 15
 ```
 
 ---
