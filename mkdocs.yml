@@ -1,0 +1,136 @@
+# Project information
+site_name: Java Learning Hub
+site_url: https://beastshriram.github.io/JavaLearningHub/
+site_author: BEASTSHRIRAM
+site_description: >-
+  Master Java from Basics to AI – A structured learning path covering
+  Java fundamentals, OOP, DSA, Backend Development, and Spring AI.
+
+# Repository
+repo_name: BEASTSHRIRAM/JavaLearningHub
+repo_url: https://github.com/BEASTSHRIRAM/JavaLearningHub
+
+# Copyright
+copyright: Copyright &copy; 2026 Java Learning Hub
+
+# Configuration
+theme:
+  name: material
+  custom_dir: docs/overrides
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: cyan
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  logo: assets/logo.png
+  icon:
+    repo: fontawesome/brands/github
+
+# Plugins
+plugins:
+  - search:
+      separator: '[\s\u200b\-_,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  - minify:
+      minify_html: true
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Home: index.md
+  - Java Basics:
+      - java-basics/index.md
+  - OOP:
+      - oops/index.md
+  - DSA:
+      - dsa/index.md
+  - CS Fundamentals:
+      - cs-fundamentals/index.md
+  - Backend:
+      - java-backend/index.md
+  - DevOps:
+      - devops/index.md
+  - Spring AI:
+      - spring-ai/index.md
+  - InterviewKick:
+      - interview-kick/index.md
+  - Quick Start: quickstart.md
+  - Resources: resources.md
+
+# Additional configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/BEASTSHRIRAM/JavaLearningHub
+    - icon: fontawesome/brands/java
+      link: https://github.com/BEASTSHRIRAM/DSA-Java
+
+extra_css:
+  - stylesheets/extra.css
