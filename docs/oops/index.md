@@ -11,9 +11,33 @@ Master the core principles of OOP: Encapsulation, Inheritance, Polymorphism, and
 
 ---
 
+## What is Object-Oriented Programming?
+
+Object-Oriented Programming (OOP) is a programming paradigm built on the concept of **"objects"**. Instead of writing functions and logic top-to-bottom (Procedural Programming), OOP organizes software design around data, or objects, rather than functions and logic.
+
+### Why do we use OOP?
+
+1. **Modularity:** Code is split into bite-sized, manageable objects that model real-world entities.
+2. **Reusability:** Code can be reused through inheritance, meaning you write less repetitive code.
+3. **Maintainability:** Bugs are easier to isolate within specific objects, and systems are easier to upgrade.
+4. **Security:** Data hiding (encapsulation) protects sensitive data from being changed by mistake.
+
+### The Four Pillars of OOP
+
+Every object-oriented language relies on four core principles:
+
+1. **Encapsulation:** Wrapping data (variables) and code (methods) together as a single secure unit. It hides the internal state of the object and requires all interaction to be performed through an object's public methods (like getters and setters).
+2. **Abstraction:** Hiding complex implementation details and showing only the essential features of the object. For example, you know how to drive a car (using the steering wheel and pedals) without knowing how the internal combustion engine works.
+3. **Inheritance:** Allowing one class to inherit the fields and methods of another. This promotes code reuse and establishes an "IS-A" parent-child relationship between classes (e.g., `Dog IS-A Animal`).
+4. **Polymorphism:** The ability of different objects to respond to the same method call in their own unique way (via method overriding or overloading).
+
+---
+
 ## Classes and Objects
 
-A class is a template for an object, and an object is an instance of a class. A class creates a new data type that can be used to create objects.
+Now that we understand the core theory, how do we actually write OOP in Java? It all starts with Classes and Objects.
+
+A class is a blueprint or template for an object, and an object is a concrete instance of a class. A class creates a new custom data type that can be used to construct objects.
 
 When you declare an object of a class, you are creating an instance of that class. Thus, a class is a logical construct. An object has physical reality. (That is, an object occupies space in memory.)
 
