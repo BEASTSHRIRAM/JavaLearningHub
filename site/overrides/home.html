@@ -192,8 +192,14 @@
   }
 
   .path-icon {
-    font-size: 2.2rem;
     margin-bottom: 0.8rem;
+    color: var(--md-accent-fg-color);
+  }
+
+  .path-icon svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    fill: currentColor;
   }
 
   .path-title {
@@ -370,18 +376,39 @@
       height: auto;
       min-height: 90vh;
       padding: 3rem 1rem;
+      width: 100%;
+      box-sizing: border-box;
     }
-    .mdx-hero h1 { font-size: 2rem; }
-    .mdx-hero p { font-size: 1rem; }
+    .mdx-hero__content {
+      padding: 1.5rem 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .mdx-hero h1 { font-size: 2rem; margin-bottom: 1rem; }
+    .mdx-hero p { font-size: 1rem; margin-bottom: 1rem; }
     .path-grid { grid-template-columns: 1fr; }
     .timeline { flex-direction: column; }
-    .timeline-arrow { transform: rotate(90deg); }
-    .stats-section { gap: 1.5rem; }
+    .timeline-arrow { transform: rotate(90deg); margin: 0.5rem 0; }
+    .stats-section { gap: 1.5rem; flex-direction: column; align-items: center; }
     .learning-paths, .timeline-section, .cta-section { max-width: 95%; }
   }
 
   @media screen and (max-width: 480px) {
-    .hero-code-preview { font-size: 0.75rem; padding: 0.8rem 1rem; }
+    .mdx-hero h1 { font-size: 1.6rem; }
+    .hero-code-preview { 
+      font-size: 0.75rem; 
+      padding: 0.8rem; 
+      width: 100%; 
+      box-sizing: border-box; 
+      overflow-x: auto; 
+    }
+    .mdx-hero .md-button {
+      padding: 0.6rem 1rem;
+      font-size: 0.9rem;
+      display: block;
+      margin: 0.5rem auto;
+      width: 90%;
+    }
   }
 </style>
 
@@ -420,7 +447,7 @@
       <h1 class="learning-paths-title">Learning Modules</h1>
       <div class="path-grid">
         <div class="path-card">
-          <div class="path-icon">📘</div>
+          <div class="path-icon">{% include ".icons/material/language-java.svg" %}</div>
           <h3 class="path-title">Java Basics</h3>
           <span class="path-difficulty beginner">Beginner</span>
           <p class="path-description">
@@ -431,7 +458,7 @@
         </div>
 
         <div class="path-card">
-          <div class="path-icon">🏗️</div>
+          <div class="path-icon">{% include ".icons/material/shape.svg" %}</div>
           <h3 class="path-title">Object-Oriented Programming</h3>
           <span class="path-difficulty intermediate">Intermediate</span>
           <p class="path-description">
@@ -442,7 +469,7 @@
         </div>
 
         <div class="path-card">
-          <div class="path-icon">🧮</div>
+          <div class="path-icon">{% include ".icons/material/graph.svg" %}</div>
           <h3 class="path-title">Data Structures & Algorithms</h3>
           <span class="path-difficulty intermediate">Intermediate – Advanced</span>
           <p class="path-description">
@@ -453,7 +480,7 @@
         </div>
 
         <div class="path-card">
-          <div class="path-icon">⚙️</div>
+          <div class="path-icon">{% include ".icons/material/server.svg" %}</div>
           <h3 class="path-title">Java Backend Development</h3>
           <span class="path-difficulty advanced">Advanced</span>
           <p class="path-description">
@@ -464,7 +491,7 @@
         </div>
 
         <div class="path-card">
-          <div class="path-icon">🤖</div>
+          <div class="path-icon">{% include ".icons/material/robot-outline.svg" %}</div>
           <h3 class="path-title">Spring AI & Agentic Systems</h3>
           <span class="path-difficulty advanced">Advanced</span>
           <p class="path-description">
@@ -475,7 +502,7 @@
         </div>
 
         <div class="path-card">
-          <div class="path-icon">CS</div>
+          <div class="path-icon">{% include ".icons/material/memory.svg" %}</div>
           <h3 class="path-title">CS Fundamentals</h3>
           <span class="path-difficulty intermediate">Intermediate</span>
           <p class="path-description">
@@ -486,7 +513,7 @@
         </div>
 
         <div class="path-card">
-          <div class="path-icon">CI</div>
+          <div class="path-icon">{% include ".icons/material/cloud-braces.svg" %}</div>
           <h3 class="path-title">DevOps</h3>
           <span class="path-difficulty intermediate">Intermediate</span>
           <p class="path-description">
@@ -497,7 +524,7 @@
         </div>
 
         <div class="path-card">
-          <div class="path-icon">IK</div>
+          <div class="path-icon">{% include ".icons/material/account-tie.svg" %}</div>
           <h3 class="path-title">InterviewKick</h3>
           <span class="path-difficulty advanced">All Levels</span>
           <p class="path-description">
