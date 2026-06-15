@@ -344,3 +344,388 @@ Focus on: what went wrong, what you learned, how you changed your approach.
 4. **Test your solution.** Walk through with a small example before saying "done."
 5. **Know your resume.** Be ready to discuss every project and technology listed.
 6. **Practice mock interviews.** Use platforms like Pramp, Interviewing.io.
+
+## Java Core (continued)
+
+### Q7: What is the difference between checked and unchecked exceptions?
+
+Short answer: Checked exceptions must be declared or caught at compile time (IOException, SQLException). Unchecked exceptions are runtime errors that the compiler does not force you to handle (NullPointerException, ArrayIndexOutOfBoundsException).
+
+Detailed explanation: Checked exceptions extend Exception (but not RuntimeException) and represent recoverable conditions external to the program, like a missing file. Unchecked exceptions extend RuntimeException and usually signal programming bugs. Error and its subclasses (OutOfMemoryError, StackOverflowError) are unchecked too, and you generally should not try to catch these since they indicate the JVM itself is in trouble.
+
+Follow up: Should you create custom checked exceptions? Most modern Java codebases avoid them because they force every caller up the chain to handle or rethrow, which clutters method signatures. Unchecked custom exceptions with clear messages are more common now.
+
+---
+
+### Q8: What is the difference between String, StringBuilder, and StringBuffer?
+
+String is immutable, so every concatenation creates a new object. StringBuilder is mutable and not thread safe, fast for single threaded string building. StringBuffer is mutable and thread safe because its methods are synchronized, but that makes it slower.
+
+```java
+String s = "a";
+s += "b"; // creates a new String object, old "a" becomes garbage
+
+StringBuilder sb = new StringBuilder();
+sb.append("a").append("b"); // modifies the same object
+```
+
+Rule of thumb: use StringBuilder unless you specifically need thread safety, in which case StringBuffer or external synchronization works.
+
+---
+
+### Q9: Explain method overloading vs overriding.
+
+Overloading happens at compile time, same method name with different parameter lists in the same class. Overriding happens at runtime, a subclass provides a specific implementation of a method already defined in its parent with the same signature.
+
+Overloading is resolved by the compiler based on argument types (static binding). Overriding is resolved at runtime based on the actual object type (dynamic binding), which is why polymorphism works.
+
+```java
+class Animal {
+    void sound() { System.out.println("generic sound"); }
+}
+class Dog extends Animal {
+    @Override
+    void sound() { System.out.println("bark"); } // overriding
+}
+
+class Calculator {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; } // overloading
+}
+```
+
+---
+
+### Q10: What is the difference between final, finally, and finalize?
+
+final is a keyword for constants, methods that cannot be overridden, or classes that cannot be extended. finally is a block that always executes after try/catch regardless of whether an exception occurred, commonly used for cleanup. finalize is a method called by the garbage collector before an object is destroyed, but it is deprecated and unreliable, so avoid relying on it. Use try with resources or explicit close methods instead.
+
+---
+
+### Q11: What are Java Streams and how do they differ from collections?
+
+A collection is an in memory data structure. A stream is a sequence of elements that supports functional style operations like map, filter, and reduce, computed lazily and often in a pipeline.
+
+```java
+List<String> names = List.of("Alice", "Bob", "Charlie", "Dave");
+List<String> result = names.stream()
+    .filter(n -> n.length() > 3)
+    .map(String::toUpperCase)
+    .sorted()
+    .collect(Collectors.toList());
+// [ALICE, CHARLIE, DAVE]
+```
+
+Streams do not store data, they describe a computation. Intermediate operations (filter, map) are lazy and only run when a terminal operation (collect, forEach, reduce) is called. Streams can be sequential or parallel via parallelStream(), but parallel streams only help for CPU heavy work on large datasets, not for small collections or IO bound tasks.
+
+---
+
+## DSA Interview Patterns (continued)
+
+### Pattern 5: Fast and Slow Pointers (Cycle Detection)
+
+When to use: Detecting cycles in linked lists, finding the middle of a list, palindrome linked list checks.
+
+```java
+public boolean hasCycle(ListNode head) {
+    ListNode slow = head, fast = head;
+    while (fast != null && fast.next != null) {
+        slow = slow.next;
+        fast = fast.next.next;
+        if (slow == fast) return true;
+    }
+    return false;
+}
+// Time: O(n), Space: O(1)
+```
+
+This is Floyd's cycle detection algorithm. If there is a cycle, the fast pointer will eventually lap the slow pointer.
+
+---
+
+### Pattern 6: Merge Intervals
+
+When to use: Overlapping ranges, scheduling problems, calendar conflicts.
+
+```java
+public int[][] merge(int[][] intervals) {
+    Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+    List<int[]> result = new ArrayList<>();
+    for (int[] interval : intervals) {
+        if (result.isEmpty() || result.get(result.size() - 1)[1] < interval[0]) {
+            result.add(interval);
+        } else {
+            result.get(result.size() - 1)[1] = Math.max(result.get(result.size() - 1)[1], interval[1]);
+        }
+    }
+    return result.toArray(new int[result.size()][]);
+}
+// Time: O(n log n) for the sort, Space: O(n)
+```
+
+The key step is sorting by start time first. After that, a single pass is enough since overlaps can only happen with adjacent intervals once sorted.
+
+---
+
+### Pattern 7: Backtracking
+
+When to use: Generating permutations, combinations, subsets, solving puzzles like N Queens or Sudoku.
+
+```java
+public List<List<Integer>> permute(int[] nums) {
+    List<List<Integer>> result = new ArrayList<>();
+    backtrack(result, new ArrayList<>(), nums);
+    return result;
+}
+
+private void backtrack(List<List<Integer>> result, List<Integer> current, int[] nums) {
+    if (current.size() == nums.length) {
+        result.add(new ArrayList<>(current));
+        return;
+    }
+    for (int num : nums) {
+        if (current.contains(num)) continue;
+        current.add(num);
+        backtrack(result, current, nums);
+        current.remove(current.size() - 1);
+    }
+}
+```
+
+Company frequency: Amazon, Google, Microsoft for permutations and subsets, Meta for combination sum variants.
+
+---
+
+### Pattern 8: Binary Search on Answer
+
+When to use: When you are asked to minimize or maximize some value, and you can check in O(n) whether a given candidate value works.
+
+Example: Given an array, split it into k subarrays minimizing the largest subarray sum. Instead of trying every split, binary search on the answer (the maximum subarray sum), and check feasibility for each candidate.
+
+```java
+public int splitArray(int[] nums, int k) {
+    int lo = 0, hi = 0;
+    for (int n : nums) { lo = Math.max(lo, n); hi += n; }
+    while (lo < hi) {
+        int mid = lo + (hi - lo) / 2;
+        if (canSplit(nums, k, mid)) hi = mid;
+        else lo = mid + 1;
+    }
+    return lo;
+}
+
+private boolean canSplit(int[] nums, int k, int maxSum) {
+    int pieces = 1, currentSum = 0;
+    for (int n : nums) {
+        if (currentSum + n > maxSum) { pieces++; currentSum = n; }
+        else currentSum += n;
+    }
+    return pieces <= k;
+}
+```
+
+This pattern shows up whenever you see "minimize the maximum" or "maximize the minimum" framing.
+
+---
+
+## System Design (continued)
+
+### Load Balancing
+
+Requirements: Distribute incoming traffic across multiple servers to avoid overload on any single machine and improve availability.
+
+Common algorithms:
+
+| Algorithm | How it works | Best for |
+|-----------|--------------|----------|
+| Round robin | Requests sent to servers in rotation | Servers with similar capacity |
+| Weighted round robin | Servers with more capacity get more requests | Mixed hardware |
+| Least connections | New request goes to server with fewest active connections | Long lived connections |
+| IP hash | Client IP determines which server handles request | Session stickiness without shared session store |
+
+Layer 4 load balancers operate on IP and TCP/UDP info, faster but less flexible. Layer 7 load balancers inspect HTTP headers and can route based on URL path or cookies, more flexible but slower.
+
+---
+
+### Designing a Chat Application
+
+Requirements: Real time one to one and group messaging, message delivery guarantees, online presence.
+
+High level design:
+
+```
+Client <-> WebSocket Gateway <-> Message Service -> Database (messages)
+                                                   -> Message Queue (for offline delivery)
+                                                   -> Presence Service (Redis)
+```
+
+Key decisions:
+
+WebSockets or long polling for real time delivery. A message queue like Kafka or RabbitMQ buffers messages for offline users. Message ordering matters, often handled with a sequence number per conversation. For group chats with many members, fan out on write (push to each member's inbox) works for small groups, while fan out on read (pull on demand) works better for very large groups or channels.
+
+Storage: NoSQL databases like Cassandra are common for chat history because of high write throughput and easy partitioning by conversation ID.
+
+---
+
+### Designing a News Feed
+
+Requirements: Users see posts from people they follow, ranked roughly by recency or relevance.
+
+Two main approaches:
+
+Fan out on write: when a user posts, the post is pushed to the feed of every follower immediately. Fast reads, but expensive for users with millions of followers (the celebrity problem).
+
+Fan out on read: when a user opens their feed, the system queries posts from everyone they follow and merges them on the fly. Avoids the celebrity problem but reads become expensive as follow counts grow.
+
+Most real systems use a hybrid: fan out on write for regular users, fan out on read for celebrities, with results merged at read time.
+
+---
+
+## Spring Boot (continued)
+
+### Q4: What is the difference between @Component, @Service, and @Repository?
+
+All three are specializations of @Component and get registered as Spring beans. The difference is mainly semantic, helping with readability and enabling specific behavior.
+
+@Component is the generic annotation for any Spring managed bean. @Service marks business logic classes. @Repository marks data access classes and additionally enables automatic exception translation, converting persistence specific exceptions into Spring's DataAccessException hierarchy.
+
+---
+
+### Q5: Explain @Transactional and common pitfalls.
+
+@Transactional wraps a method in a database transaction, committing on success and rolling back on a runtime exception (by default, checked exceptions do not trigger rollback unless configured).
+
+Common pitfalls:
+
+Self invocation does not work. If a method inside the same class calls another @Transactional method on this, the proxy is bypassed and the annotation has no effect, because Spring's transaction management relies on proxies wrapping the bean.
+
+Private methods cannot be proxied, so @Transactional on a private method is silently ignored.
+
+Read only transactions (@Transactional(readOnly = true)) can be a performance optimization hint for some databases and ORMs, but do not enforce read only behavior at the database level.
+
+---
+
+### Q6: What is the difference between @RequestParam, @PathVariable, and @RequestBody?
+
+@RequestParam extracts query parameters, like /search?q=java extracting q. @PathVariable extracts values from the URL path itself, like /users/{id} extracting id. @RequestBody deserializes the request body, typically JSON, into a Java object, used for POST and PUT requests.
+
+```java
+@GetMapping("/users/{id}")
+public User getUser(@PathVariable Long id, @RequestParam(required = false) String fields) {
+    // id comes from path, fields from query string
+}
+
+@PostMapping("/users")
+public User createUser(@RequestBody UserDto dto) {
+    // dto is deserialized from JSON body
+}
+```
+
+---
+
+## DBMS (continued)
+
+### Q4: What is the difference between clustered and non clustered indexes?
+
+A clustered index determines the physical order of data in the table, so a table can have only one clustered index (usually the primary key). A non clustered index is a separate structure that stores pointers back to the actual rows, and a table can have many of these.
+
+Reading via a clustered index is faster for range queries because the data is physically sorted. Non clustered indexes add overhead on every write since they must be updated separately from the data.
+
+---
+
+### Q5: Explain ACID properties.
+
+Atomicity: a transaction either fully completes or fully rolls back, no partial updates.
+
+Consistency: a transaction brings the database from one valid state to another, respecting constraints and rules.
+
+Isolation: concurrent transactions do not interfere with each other's intermediate states.
+
+Durability: once a transaction commits, the changes survive even a crash, typically because they are written to a transaction log on disk before the commit is acknowledged.
+
+---
+
+### Q6: What are the different types of joins?
+
+INNER JOIN returns only rows with matching values in both tables. LEFT JOIN returns all rows from the left table plus matched rows from the right, with nulls where there is no match. RIGHT JOIN is the mirror of LEFT JOIN. FULL OUTER JOIN returns all rows from both tables, with nulls where there is no match on either side. CROSS JOIN returns the cartesian product of both tables, every row from one combined with every row from the other.
+
+```sql
+SELECT e.name, d.department_name
+FROM employees e
+LEFT JOIN departments d ON e.dept_id = d.id;
+-- includes employees with no department, dept_name will be NULL
+```
+
+---
+
+### Q7: What is database sharding?
+
+Sharding splits a large database into smaller pieces called shards, each stored on a different server, usually based on a key like user ID or geographic region.
+
+Common sharding strategies: range based (sort key ranges across shards, simple but can create hot spots), hash based (hash the shard key to distribute evenly, harder to do range queries), and directory based (a lookup table maps keys to shards, flexible but the directory itself becomes a bottleneck if not handled carefully).
+
+The hardest part of sharding is usually resharding when a shard grows too large, and handling queries that need data from multiple shards, like joins or aggregations across the whole dataset.
+
+---
+
+## OS and Networks (continued)
+
+### Q4: What is the difference between a process and a thread?
+
+A process is an independent program in execution with its own memory space. A thread is a lightweight unit of execution within a process, sharing the process's memory and resources with other threads in the same process.
+
+Context switching between threads of the same process is cheaper than between processes, because the memory mapping does not need to change. But shared memory means threads need synchronization (locks, semaphores) to avoid race conditions, which is not a concern between separate processes unless they explicitly set up shared memory.
+
+---
+
+### Q5: Explain virtual memory and paging.
+
+Virtual memory gives each process the illusion of a large, contiguous, private address space, even though physical memory is limited and shared. The OS maps virtual addresses to physical addresses using page tables.
+
+Paging divides memory into fixed size blocks called pages (commonly 4KB). When a process accesses a page not currently in physical memory, a page fault occurs, and the OS loads the page from disk (the swap space), possibly evicting another page first using a replacement policy like LRU (least recently used).
+
+Benefits: processes are isolated from each other, programs can be larger than physical memory, and memory can be allocated non contiguously while still appearing contiguous to the process.
+
+---
+
+### Q6: What is the difference between TCP and UDP?
+
+TCP is connection oriented, with a handshake before data transfer, guarantees ordered and reliable delivery via acknowledgments and retransmission, and includes flow control and congestion control. Used for HTTP, file transfer, email.
+
+UDP is connectionless, sends packets (datagrams) without guarantees on order or delivery, and has much lower overhead. Used for video streaming, DNS, online gaming, where occasional packet loss is acceptable but latency matters more than perfect reliability.
+
+---
+
+### Q7: What is DNS and how does it work at a high level?
+
+DNS (Domain Name System) translates human readable domain names into IP addresses.
+
+Resolution flow: the browser checks its local cache first. If not found, it queries a recursive resolver (often run by the ISP). The resolver queries a root server, which points to a TLD server (for .com, .org, etc), which points to the authoritative name server for the specific domain, which finally returns the IP address. The result is cached at multiple levels (browser, OS, resolver) according to a TTL (time to live) value to reduce repeated lookups.
+
+---
+
+### Q8: What is the difference between HTTP and HTTPS?
+
+HTTP sends data in plain text, so anyone intercepting the traffic can read it. HTTPS adds a TLS (Transport Layer Security) layer that encrypts the data, verifies the server's identity via certificates, and protects against tampering.
+
+The TLS handshake involves the client and server agreeing on a cipher suite, the server presenting a certificate signed by a trusted certificate authority, and both sides deriving a shared symmetric key used to encrypt the actual data, since symmetric encryption is much faster than asymmetric encryption for bulk data.
+
+---
+
+## Behavioral Questions (continued)
+
+### "Why do you want to work here?"
+
+Avoid generic answers about company size or reputation. Mention something specific, a product you have used, a technical blog post or talk from someone on the team, or a problem space that genuinely interests you and connects to your background.
+
+### "Tell me about a time you had to learn something quickly."
+
+Pick an example with a real deadline and a concrete outcome. Mention how you approached learning (docs, asking a teammate, building a small prototype first) rather than just saying "I read the documentation."
+
+### "How do you prioritize when everything feels urgent?"
+
+Good answers usually mention a framework, even an informal one: separating what is urgent versus important, communicating tradeoffs to stakeholders rather than silently dropping things, and giving an example where you pushed back on a deadline with a reason.
+
+### Tips for Remote and Virtual Interviews
+
+Test your setup (camera, mic, screen share) at least ten minutes before. Keep a notepad and pen nearby for system design or quick math, since typing while talking can be distracting. If using a shared coding editor, narrate what you are typing as you type it, since the interviewer cannot always see your cursor in real time.

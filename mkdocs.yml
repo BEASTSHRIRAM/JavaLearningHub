@@ -109,6 +109,7 @@ nav:
   - Java Basics: java-basics/index.md
   - OOP: oops/index.md
   - DSA: dsa/index.md
+  - DSA Patterns: dsa-patterns/index.md
   - CS Fundamentals: cs-fundamentals/index.md
   - Backend: java-backend/index.md
   - DevOps: devops/index.md
