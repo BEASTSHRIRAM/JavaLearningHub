@@ -539,4 +539,4 @@ docker run -p 8080:8080 my-java-app
 
 Once you've mastered Backend, explore:
 
-[Learn Spring AI & Agents :material-arrow-right:](../spring-ai/index.md){ .md-button .md-button--primary }
+[Learn Master AI & Agents :material-arrow-right:](../master-ai/index.md){ .md-button .md-button--primary }

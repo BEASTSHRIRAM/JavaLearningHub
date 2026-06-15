@@ -25,7 +25,7 @@ Depending on where you are in your learning journey, pick a starting point:
 - **Know some Java?** → Jump to [Object-Oriented Programming](oops/index.md)
 - **Preparing for interviews?** → Focus on [Data Structures & Algorithms](dsa/index.md)
 - **Want to build apps?** → Learn [Java Backend Development](java-backend/index.md)
-- **Interested in AI?** → Explore [Spring AI & Agents](spring-ai/index.md)
+- **Interested in AI?** → Explore [Master AI & Agents](master-ai/index.md)
 
 ---
 
@@ -109,7 +109,7 @@ java HelloWorld
 | 3-4 | **OOP** | Classes, inheritance, polymorphism, encapsulation |
 | 5-8 | **DSA Practice** | LeetCode daily practice, 2-3 problems per day |
 | 9-14 | **Java Backend** | Spring Boot, REST APIs, Database |
-| 15+ | **Spring AI & Agents** | Advanced: AI integration, RAG, multi-agents |
+| 15+ | **Master AI & Agents** | Advanced: AI integration, RAG, multi-agents |
 
 ---
 

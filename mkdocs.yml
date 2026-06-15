@@ -4,7 +4,7 @@ site_url: https://beastshriram.github.io/JavaLearningHub/
 site_author: BEASTSHRIRAM
 site_description: >-
   Master Java from Basics to AI – A structured learning path covering
-  Java fundamentals, OOP, DSA, Backend Development, and Spring AI.
+  Java fundamentals, OOP, DSA, Backend Development, and Master AI.
 
 # Repository
 repo_name: BEASTSHRIRAM/JavaLearningHub
@@ -112,7 +112,7 @@ nav:
   - CS Fundamentals: cs-fundamentals/index.md
   - Backend: java-backend/index.md
   - DevOps: devops/index.md
-  - Spring AI: spring-ai/index.md
+  - Master AI: master-ai/index.md
   - InterviewKick: interview-kick/index.md
   - Quick Start: quickstart.md
   - Resources: resources.md

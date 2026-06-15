@@ -96,7 +96,7 @@ After deployment, share these links:
 | OOP | `https://yourusername.github.io/java-learning-hub/oops/` |
 | DSA | `https://yourusername.github.io/java-learning-hub/dsa/` |
 | Backend | `https://yourusername.github.io/java-learning-hub/java-backend/` |
-| Spring AI | `https://yourusername.github.io/java-learning-hub/spring-ai/` |
+| Master AI | `https://yourusername.github.io/java-learning-hub/master-ai/` |
 | Resources | `https://yourusername.github.io/java-learning-hub/resources.html` |
 
 ## Troubleshooting

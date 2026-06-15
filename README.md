@@ -34,7 +34,7 @@ Welcome to a comprehensive Java learning repository designed for **juniors and b
 - Application Structure
 - Best Practices
 
-### 5. **Spring AI & Agentic AI**
+### 5. **Master AI & Agentic AI**
 - Introduction to AI in Java
 - LangChain4j Guide (RAG, Agents, Tools)
 - Agentscope Tutorial
@@ -50,7 +50,7 @@ Welcome to a comprehensive Java learning repository designed for **juniors and b
 2. Move to **OOP** - Build strong OOP concepts
 3. Practice **DSA** - Enhance problem-solving skills
 4. Explore **Java Backend** - Build real applications
-5. Dive into **Spring AI** - Learn cutting-edge AI integration
+5. Dive into **Master AI** - Learn cutting-edge AI integration
 
 ### **For Mentors/Contributors:**
 1. See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines
@@ -79,7 +79,7 @@ OOPS/
 │   ├── java-backend/
 │   │   ├── index.html
 │   │   └── examples/
-│   └── spring-ai/
+│   └── master-ai/
 │       ├── index.html
 │       ├── langchain4j-guide.md
 │       ├── agentscope-guide.md
